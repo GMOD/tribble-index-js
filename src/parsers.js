@@ -26,7 +26,18 @@ const linearParser = parser()
     length: 'numChromosomes',
   })
 
-const treeParser = parser().uint32('numChromosomes')
+const treeParser = parser()
+  .uint32('numChromosomes')
+  .string('name', { zeroTerminated: true })
+  .uint32('numIntervals')
+  .array('intervals', {
+    type: parser()
+      .uint32('start')
+      .uint32('end')
+      .array(...readLongFromArray('pos'))
+      .uint32('size'),
+    length: 'numIntervals',
+  })
 
 const headerParser = parser()
   .string('magic', { length: 4 })
