@@ -2,13 +2,25 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb-base",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "plugins": [
+    "prettier"
   ],
   "env": {
     "jest": true
   },
+  "globals": { "window": true },
   "rules": {
+    "no-underscore-dangle": "off",
+    "no-bitwise": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false,
+        "trailingComma": "all"
+      }
+    ]
   }
 }
