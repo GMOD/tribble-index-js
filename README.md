@@ -2,7 +2,7 @@
 
 [![Generated with nod](https://img.shields.io/badge/generator-nod-2196F3.svg?style=flat-square)](https://github.com/diegohaz/nod)
 [![NPM version](https://img.shields.io/npm/v/tribble-js.svg?style=flat-square)](https://npmjs.org/package/tribble-js)
-[![Build Status](https://img.shields.io/travis/rbuels/tribble-js/master.svg?style=flat-square)](https://travis-ci.org/rbuels/tribble-js) [![Coverage Status](https://img.shields.io/codecov/c/github/rbuels/tribble-js/master.svg?style=flat-square)](https://codecov.io/gh/rbuels/tribble-js/branch/master)
+[![Build Status](https://img.shields.io/travis/rbuels/tribble-js/master.svg?style=flat-square)](https://travis-ci.org/rbuels/tribble-js) 
 
 Read htsjdk Tribble indexes using pure JavaScript. Supports only Tribble version 3 linear and IntervalTree indexes.
 
