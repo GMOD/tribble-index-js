@@ -7,6 +7,9 @@ const readFile = promisify(fs.readFile)
 
 describe('index reader', () => {
   const testcases = [
+    { file: 'phased.vcf.idx' },
+    { file: 'serialization_test.bcf.idx' },
+    { file: 'test1.vcf.idx' },
     {
       file: 'Tb.vcf.idx',
     },
@@ -40,7 +43,7 @@ describe('index reader', () => {
         const result = read(buf)
         const expectedFilename = `${fn}.expected.json`
         // fs.writeFileSync(expectedFilename, JSON.stringify(result, null, 2))
-        const expected = JSON.parse(await readFile(expectedFilename,'utf8'))
+        const expected = JSON.parse(await readFile(expectedFilename, 'utf8'))
         expect(result).toEqual(expected)
       }
     })

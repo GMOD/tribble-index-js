@@ -1,0 +1,360 @@
+{
+  "header": {
+    "magic": "TIDX",
+    "type": "linear",
+    "version": 3,
+    "fileName": "/Users/msooknah/Documents/scratch/picardgroup/vcf_test_files/vcfFormatTest2.bcf",
+    "fileSize": 7490,
+    "fileTimestamp": 1427306276000,
+    "fileMD5": "",
+    "flags": 0,
+    "numProperties": 7,
+    "properties": [
+      {
+        "key": "DICT:1",
+        "val": "249250621"
+      },
+      {
+        "key": "DICT:2",
+        "val": "243199373"
+      },
+      {
+        "key": "DICT:3",
+        "val": "198022430"
+      },
+      {
+        "key": "FEATURE_LENGTH_MEAN",
+        "val": "1.8333333333333333"
+      },
+      {
+        "key": "FEATURE_LENGTH_STD_DEV",
+        "val": "0.38924947208076144"
+      },
+      {
+        "key": "MEAN_FEATURE_VARIANCE",
+        "val": "0.1515151515151515"
+      },
+      {
+        "key": "FEATURE_COUNT",
+        "val": "12"
+      }
+    ]
+  },
+  "data": {
+    "numChromosomes": 3,
+    "chromosomes": [
+      {
+        "name": "1",
+        "binWidth": 1024000,
+        "numBins": 37,
+        "longestFeature": 2,
+        "isOldV3Index": false,
+        "numFeatures": 4,
+        "startPosition": 4824,
+        "blocks": [
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 4824
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5056
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5287
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5514
+          },
+          {
+            "position": 5744
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "binWidth": 1024000,
+        "numBins": 29,
+        "longestFeature": 1,
+        "isOldV3Index": false,
+        "numFeatures": 4,
+        "startPosition": 5744,
+        "blocks": [
+          {
+            "position": 5744
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 5975
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6195
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6415
+          },
+          {
+            "position": 6635
+          }
+        ]
+      },
+      {
+        "name": "3",
+        "binWidth": 1024000,
+        "numBins": 27,
+        "longestFeature": 1,
+        "isOldV3Index": false,
+        "numFeatures": 4,
+        "startPosition": 6635,
+        "blocks": [
+          {
+            "position": 6635
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 6833
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7064
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7271
+          },
+          {
+            "position": 7490
+          }
+        ]
+      }
+    ]
+  }
+}

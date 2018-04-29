@@ -1,0 +1,479 @@
+{
+  "header": {
+    "magic": "TIDX",
+    "type": "linear",
+    "version": 3,
+    "fileName": "/Users/farjoun/Sequencing/Picard/testdata/edu/mit/broad/picard/util/parsegatkintervalslist/test1.vcf",
+    "fileSize": 14704,
+    "fileTimestamp": 1393435500000,
+    "fileMD5": "",
+    "flags": 0,
+    "numProperties": 89,
+    "properties": [
+      {
+        "key": "FEATURE_LENGTH_MEAN",
+        "val": "1.0"
+      },
+      {
+        "key": "FEATURE_LENGTH_STD_DEV",
+        "val": "0.0"
+      },
+      {
+        "key": "MEAN_FEATURE_VARIANCE",
+        "val": "0.0"
+      },
+      {
+        "key": "FEATURE_COUNT",
+        "val": "5"
+      },
+      {
+        "key": "DICT:1",
+        "val": "249250621"
+      },
+      {
+        "key": "DICT:2",
+        "val": "243199373"
+      },
+      {
+        "key": "DICT:3",
+        "val": "198022430"
+      },
+      {
+        "key": "DICT:4",
+        "val": "191154276"
+      },
+      {
+        "key": "DICT:5",
+        "val": "180915260"
+      },
+      {
+        "key": "DICT:6",
+        "val": "171115067"
+      },
+      {
+        "key": "DICT:7",
+        "val": "159138663"
+      },
+      {
+        "key": "DICT:8",
+        "val": "146364022"
+      },
+      {
+        "key": "DICT:9",
+        "val": "141213431"
+      },
+      {
+        "key": "DICT:10",
+        "val": "135534747"
+      },
+      {
+        "key": "DICT:11",
+        "val": "135006516"
+      },
+      {
+        "key": "DICT:12",
+        "val": "133851895"
+      },
+      {
+        "key": "DICT:13",
+        "val": "115169878"
+      },
+      {
+        "key": "DICT:14",
+        "val": "107349540"
+      },
+      {
+        "key": "DICT:15",
+        "val": "102531392"
+      },
+      {
+        "key": "DICT:16",
+        "val": "90354753"
+      },
+      {
+        "key": "DICT:17",
+        "val": "81195210"
+      },
+      {
+        "key": "DICT:18",
+        "val": "78077248"
+      },
+      {
+        "key": "DICT:19",
+        "val": "59128983"
+      },
+      {
+        "key": "DICT:20",
+        "val": "63025520"
+      },
+      {
+        "key": "DICT:21",
+        "val": "48129895"
+      },
+      {
+        "key": "DICT:22",
+        "val": "51304566"
+      },
+      {
+        "key": "DICT:X",
+        "val": "155270560"
+      },
+      {
+        "key": "DICT:Y",
+        "val": "59373566"
+      },
+      {
+        "key": "DICT:MT",
+        "val": "16569"
+      },
+      {
+        "key": "DICT:GL000207.1",
+        "val": "4262"
+      },
+      {
+        "key": "DICT:GL000226.1",
+        "val": "15008"
+      },
+      {
+        "key": "DICT:GL000229.1",
+        "val": "19913"
+      },
+      {
+        "key": "DICT:GL000231.1",
+        "val": "27386"
+      },
+      {
+        "key": "DICT:GL000210.1",
+        "val": "27682"
+      },
+      {
+        "key": "DICT:GL000239.1",
+        "val": "33824"
+      },
+      {
+        "key": "DICT:GL000235.1",
+        "val": "34474"
+      },
+      {
+        "key": "DICT:GL000201.1",
+        "val": "36148"
+      },
+      {
+        "key": "DICT:GL000247.1",
+        "val": "36422"
+      },
+      {
+        "key": "DICT:GL000245.1",
+        "val": "36651"
+      },
+      {
+        "key": "DICT:GL000197.1",
+        "val": "37175"
+      },
+      {
+        "key": "DICT:GL000203.1",
+        "val": "37498"
+      },
+      {
+        "key": "DICT:GL000246.1",
+        "val": "38154"
+      },
+      {
+        "key": "DICT:GL000249.1",
+        "val": "38502"
+      },
+      {
+        "key": "DICT:GL000196.1",
+        "val": "38914"
+      },
+      {
+        "key": "DICT:GL000248.1",
+        "val": "39786"
+      },
+      {
+        "key": "DICT:GL000244.1",
+        "val": "39929"
+      },
+      {
+        "key": "DICT:GL000238.1",
+        "val": "39939"
+      },
+      {
+        "key": "DICT:GL000202.1",
+        "val": "40103"
+      },
+      {
+        "key": "DICT:GL000234.1",
+        "val": "40531"
+      },
+      {
+        "key": "DICT:GL000232.1",
+        "val": "40652"
+      },
+      {
+        "key": "DICT:GL000206.1",
+        "val": "41001"
+      },
+      {
+        "key": "DICT:GL000240.1",
+        "val": "41933"
+      },
+      {
+        "key": "DICT:GL000236.1",
+        "val": "41934"
+      },
+      {
+        "key": "DICT:GL000241.1",
+        "val": "42152"
+      },
+      {
+        "key": "DICT:GL000243.1",
+        "val": "43341"
+      },
+      {
+        "key": "DICT:GL000242.1",
+        "val": "43523"
+      },
+      {
+        "key": "DICT:GL000230.1",
+        "val": "43691"
+      },
+      {
+        "key": "DICT:GL000237.1",
+        "val": "45867"
+      },
+      {
+        "key": "DICT:GL000233.1",
+        "val": "45941"
+      },
+      {
+        "key": "DICT:GL000204.1",
+        "val": "81310"
+      },
+      {
+        "key": "DICT:GL000198.1",
+        "val": "90085"
+      },
+      {
+        "key": "DICT:GL000208.1",
+        "val": "92689"
+      },
+      {
+        "key": "DICT:GL000191.1",
+        "val": "106433"
+      },
+      {
+        "key": "DICT:GL000227.1",
+        "val": "128374"
+      },
+      {
+        "key": "DICT:GL000228.1",
+        "val": "129120"
+      },
+      {
+        "key": "DICT:GL000214.1",
+        "val": "137718"
+      },
+      {
+        "key": "DICT:GL000221.1",
+        "val": "155397"
+      },
+      {
+        "key": "DICT:GL000209.1",
+        "val": "159169"
+      },
+      {
+        "key": "DICT:GL000218.1",
+        "val": "161147"
+      },
+      {
+        "key": "DICT:GL000220.1",
+        "val": "161802"
+      },
+      {
+        "key": "DICT:GL000213.1",
+        "val": "164239"
+      },
+      {
+        "key": "DICT:GL000211.1",
+        "val": "166566"
+      },
+      {
+        "key": "DICT:GL000199.1",
+        "val": "169874"
+      },
+      {
+        "key": "DICT:GL000217.1",
+        "val": "172149"
+      },
+      {
+        "key": "DICT:GL000216.1",
+        "val": "172294"
+      },
+      {
+        "key": "DICT:GL000215.1",
+        "val": "172545"
+      },
+      {
+        "key": "DICT:GL000205.1",
+        "val": "174588"
+      },
+      {
+        "key": "DICT:GL000219.1",
+        "val": "179198"
+      },
+      {
+        "key": "DICT:GL000224.1",
+        "val": "179693"
+      },
+      {
+        "key": "DICT:GL000223.1",
+        "val": "180455"
+      },
+      {
+        "key": "DICT:GL000195.1",
+        "val": "182896"
+      },
+      {
+        "key": "DICT:GL000212.1",
+        "val": "186858"
+      },
+      {
+        "key": "DICT:GL000222.1",
+        "val": "186861"
+      },
+      {
+        "key": "DICT:GL000200.1",
+        "val": "187035"
+      },
+      {
+        "key": "DICT:GL000193.1",
+        "val": "189789"
+      },
+      {
+        "key": "DICT:GL000194.1",
+        "val": "191469"
+      },
+      {
+        "key": "DICT:GL000225.1",
+        "val": "211173"
+      },
+      {
+        "key": "DICT:GL000192.1",
+        "val": "547496"
+      },
+      {
+        "key": "DICT:NC_007605",
+        "val": "171823"
+      }
+    ]
+  },
+  "data": {
+    "numChromosomes": 2,
+    "chromosomes": [
+      {
+        "name": "1",
+        "binWidth": 1024000,
+        "numBins": 17,
+        "longestFeature": 1,
+        "isOldV3Index": false,
+        "numFeatures": 3,
+        "startPosition": 0,
+        "blocks": [
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 0
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13215
+          },
+          {
+            "position": 13981
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "binWidth": 1024000,
+        "numBins": 10,
+        "longestFeature": 1,
+        "isOldV3Index": false,
+        "numFeatures": 2,
+        "startPosition": 13981,
+        "blocks": [
+          {
+            "position": 13981
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14348
+          },
+          {
+            "position": 14704
+          }
+        ]
+      }
+    ]
+  }
+}
