@@ -8,14 +8,19 @@ Read htsjdk Tribble indexes using pure JavaScript. Supports only Tribble version
 
 ## Install
 
-    $ npm install --save tribble-js
+    $ npm install --save tribble-index
 
 ## Usage
 
 ```js
-import myModule from 'tribble-js'
+import read from 'tribble-index'
 
-myModule()
+fs.readFile('path/to/data.vcf.idx', function(err,buffer) {
+  const index = read(buffer);
+
+  console.log(index.header)
+  console.log(index.data)
+})
 ```
 
 ## API

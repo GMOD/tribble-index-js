@@ -1,9 +1,9 @@
 {
-  "name": "tribble-js",
+  "name": "tribble-index",
   "version": "0.0.1",
   "description": "Read htsjdk Tribble indexes using pure JavaScript",
   "license": "MIT",
-  "repository": "rbuels/tribble-js",
+  "repository": "rbuels/tribble-index",
   "main": "dist/index.js",
   "author": {
     "name": "Robert Buels",
@@ -41,7 +41,9 @@
     "testEnvironment": "node"
   },
   "keywords": [
-    "tribble-js"
+    "tribble",
+    "genomics",
+    "igv.js"
   ],
   "dependencies": {
     "binary-parser": "^1.3.2",
