@@ -32,6 +32,7 @@ function formatLongLE(fieldName) {
  * Helper function for use with binary-parser to attempt to read a `long` (64-bit signed int) from the Buffer.
  * JavaScript does not quite support 64 bit integers, so this will throw an integer overflow error if it overflows.
  * @param {string} fieldName
+ * @private
  */
 export function readLongFromArray(fieldName) {
   return [
@@ -46,6 +47,7 @@ export function readLongFromArray(fieldName) {
 
 /**
  * Instantiates and returns a new little-endian binary-parser
+ * @private
  */
 export function parser() {
   return new Parser().endianess('little')
