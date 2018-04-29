@@ -57,7 +57,8 @@
         "startPosition": 647,
         "blocks": [
           {
-            "position": 1025
+            "size": 378,
+            "start": 647
           }
         ]
       },
@@ -71,7 +72,8 @@
         "startPosition": 1025,
         "blocks": [
           {
-            "position": 1157
+            "size": 132,
+            "start": 1025
           }
         ]
       },
@@ -85,7 +87,8 @@
         "startPosition": 1157,
         "blocks": [
           {
-            "position": 1262
+            "size": 105,
+            "start": 1157
           }
         ]
       },
@@ -99,7 +102,8 @@
         "startPosition": 1262,
         "blocks": [
           {
-            "position": 1343
+            "size": 81,
+            "start": 1262
           }
         ]
       }
