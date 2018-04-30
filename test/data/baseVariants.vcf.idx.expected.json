@@ -54,8 +54,8 @@
       "startPosition": 647,
       "blocks": [
         {
-          "size": 378,
-          "start": 647
+          "length": 378,
+          "offset": 647
         }
       ]
     },
@@ -69,8 +69,8 @@
       "startPosition": 1025,
       "blocks": [
         {
-          "size": 132,
-          "start": 1025
+          "length": 132,
+          "offset": 1025
         }
       ]
     },
@@ -84,8 +84,8 @@
       "startPosition": 1157,
       "blocks": [
         {
-          "size": 105,
-          "start": 1157
+          "length": 105,
+          "offset": 1157
         }
       ]
     },
@@ -99,8 +99,8 @@
       "startPosition": 1262,
       "blocks": [
         {
-          "size": 81,
-          "start": 1262
+          "length": 81,
+          "offset": 1262
         }
       ]
     }

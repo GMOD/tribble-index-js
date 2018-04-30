@@ -21,8 +21,8 @@ class LinearBinnedIndex extends BaseIndex {
       chr.blocks.forEach(block => {
         const blockPosition = block.position
         delete block.position
-        block.size = blockPosition - currentPosition
-        block.start = currentPosition
+        block.length = blockPosition - currentPosition
+        block.offset = currentPosition
         currentPosition = blockPosition
       })
 
@@ -54,14 +54,14 @@ class LinearBinnedIndex extends BaseIndex {
         chr.blocks.length - 1,
       )
 
-      const startPos = chr.blocks[startBinNumber].start
-      const size =
-        chr.blocks[endBinNumber].start +
-        chr.blocks[endBinNumber].size -
-        startPos
-      if (size === 0) return
+      const { offset } = chr.blocks[startBinNumber]
+      const length =
+        chr.blocks[endBinNumber].offset +
+        chr.blocks[endBinNumber].length -
+        offset
+      if (length === 0) return
 
-      blocks.push({ start: startPos, size })
+      blocks.push({ offset, length })
     })
     return blocks
   }

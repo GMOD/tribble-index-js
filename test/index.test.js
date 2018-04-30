@@ -56,8 +56,8 @@ describe('index reader', () => {
     expect(index.getBlocks('foo', 120, 400)).toEqual([])
     expect(index.getBlocks('20', 0, 9000000)).toHaveLength(2)
     expect(index.getBlocks('20', 0, 9000000)).toEqual([
-      { size: 102, start: 1142 },
-      { size: 124, start: 1244 },
+      { length: 102, offset: 1142 },
+      { length: 124, offset: 1244 },
     ])
   })
 })
