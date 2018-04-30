@@ -37,8 +37,16 @@ class LinearBinnedIndex extends BaseIndex {
     })
   }
 
-  getBlocks(chrName, start, end) {
-    const regularizedChrName = LinearBinnedIndex.regularizeChrName(chrName)
+  /**
+   * Get an array of { offset, length } objects describing regions of the
+   * indexed file containing data for the given range.
+   *
+   * @param {string} refName - name of the reference sequence
+   * @param {integer} start - start coordinate of the range of interest
+   * @param {integer} end - end coordinate of the range of interest
+   */
+  getBlocks(refName, start, end) {
+    const regularizedChrName = LinearBinnedIndex.regularizeChrName(refName)
     if (!this.chromosomeEntries[regularizedChrName]) return []
     const blocks = []
     this.chromosomeEntries[regularizedChrName].forEach(chrIndex => {
@@ -80,6 +88,13 @@ class IntervalTreeIndex extends BaseIndex {
   }
 }
 
+/**
+ * Parse the index from the given Buffer object. The buffer must contain
+ * the entire index.
+ *
+ * @param {Buffer} input
+ * @returns {LinearIndex|IntervalTreeIndex} an index object supporting the `getBlocks` method
+ */
 export default function read(input) {
   if (Buffer.isBuffer(input)) {
     const data = indexParser.parse(input)
