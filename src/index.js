@@ -73,6 +73,17 @@ class LinearBinnedIndex extends BaseIndex {
     })
     return blocks
   }
+
+  /**
+   * Return true if the given reference sequence is present in the index,
+   * false otherwise
+   * @param {string} refName
+   * @returns {boolean}
+   */
+  hasRefSeq(refName) {
+    const regularizedChrName = LinearBinnedIndex.regularizeChrName(refName)
+    return !!this.chromosomeEntries[regularizedChrName]
+  }
 }
 
 class IntervalTreeIndex extends BaseIndex {
@@ -81,9 +92,17 @@ class IntervalTreeIndex extends BaseIndex {
     this.type = 'interval_tree'
   }
 
-  static getBlocks(/* chrName, start, end */) {
+  getBlocks(/* chrName, start, end */) {
+    this.hello = 1 // deleteme
     throw new Error(
       'getBlocks not yet implemented for interval tree indexes. help wanted.',
+    )
+  }
+
+  hasRefSeq(/* refName */) {
+    this.hello = 1 // deleteme
+    throw new Error(
+      'hasRefSeq not yet implemented for interval tree indexes. help wanted.',
     )
   }
 }

@@ -46,6 +46,7 @@ fs.readFile('path/to/data.vcf.idx', (err, buffer) => {
 #### Table of Contents
 
 -   [getBlocks](#getblocks)
+-   [hasRefSeq](#hasrefseq)
 -   [read](#read)
 
 ### getBlocks
@@ -58,6 +59,17 @@ indexed file containing data for the given range.
 -   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name of the reference sequence
 -   `start` **integer** start coordinate of the range of interest
 -   `end` **integer** end coordinate of the range of interest
+
+### hasRefSeq
+
+Return true if the given reference sequence is present in the index,
+false otherwise
+
+**Parameters**
+
+-   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
 
 ### read
 

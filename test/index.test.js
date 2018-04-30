@@ -59,5 +59,8 @@ describe('index reader', () => {
       { length: 102, offset: 1142 },
       { length: 124, offset: 1244 },
     ])
+    expect(index.hasRefSeq('12')).toEqual(false)
+    expect(index.hasRefSeq('20')).toEqual(true)
+    expect(index.hasRefSeq(' 20')).toEqual(true)
   })
 })
