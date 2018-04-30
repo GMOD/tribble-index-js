@@ -1,112 +1,122 @@
 {
-  "header": {
-    "magic": "TIDX",
-    "type": "linear",
-    "version": 3,
-    "fileName": "/Users/cmn/projects/hellbender/src/test/resources/org/broadinstitute/hellbender/engine/MultiVariantWalker/baseVariants.vcf",
-    "fileSize": 1343,
-    "fileTimestamp": 1473973399000,
-    "fileMD5": "",
-    "flags": 0,
-    "numProperties": 8,
-    "properties": [
-      {
-        "key": "DICT:1",
-        "val": "16000"
-      },
-      {
-        "key": "DICT:2",
-        "val": "16000"
-      },
-      {
-        "key": "DICT:3",
-        "val": "16000"
-      },
-      {
-        "key": "DICT:4",
-        "val": "16000"
-      },
-      {
-        "key": "FEATURE_LENGTH_MEAN",
-        "val": "3.7307692307692313"
-      },
-      {
-        "key": "FEATURE_LENGTH_STD_DEV",
-        "val": "0.7775701798650618"
-      },
-      {
-        "key": "MEAN_FEATURE_VARIANCE",
-        "val": "0.6046153846153846"
-      },
-      {
-        "key": "FEATURE_COUNT",
-        "val": "26"
-      }
-    ]
-  },
-  "data": {
-    "numChromosomes": 4,
-    "chromosomes": [
-      {
-        "name": "1",
-        "binWidth": 2000,
-        "numBins": 1,
-        "longestFeature": 4,
-        "isOldV3Index": false,
-        "numFeatures": 14,
-        "startPosition": 647,
-        "blocks": [
-          {
-            "size": 378,
-            "start": 647
-          }
-        ]
-      },
-      {
-        "name": "2",
-        "binWidth": 2000,
-        "numBins": 1,
-        "longestFeature": 3,
-        "isOldV3Index": false,
-        "numFeatures": 5,
-        "startPosition": 1025,
-        "blocks": [
-          {
-            "size": 132,
-            "start": 1025
-          }
-        ]
-      },
-      {
-        "name": "3",
-        "binWidth": 2000,
-        "numBins": 1,
-        "longestFeature": 4,
-        "isOldV3Index": false,
-        "numFeatures": 4,
-        "startPosition": 1157,
-        "blocks": [
-          {
-            "size": 105,
-            "start": 1157
-          }
-        ]
-      },
-      {
-        "name": "4",
-        "binWidth": 2000,
-        "numBins": 1,
-        "longestFeature": 4,
-        "isOldV3Index": false,
-        "numFeatures": 3,
-        "startPosition": 1262,
-        "blocks": [
-          {
-            "size": 81,
-            "start": 1262
-          }
-        ]
-      }
+  "magic": "TIDX",
+  "type": "linear",
+  "version": 3,
+  "fileName": "/Users/cmn/projects/hellbender/src/test/resources/org/broadinstitute/hellbender/engine/MultiVariantWalker/baseVariants.vcf",
+  "fileSize": 1343,
+  "fileTimestamp": 1473973399000,
+  "fileMD5": "",
+  "flags": 0,
+  "numProperties": 8,
+  "properties": [
+    {
+      "key": "DICT:1",
+      "val": "16000"
+    },
+    {
+      "key": "DICT:2",
+      "val": "16000"
+    },
+    {
+      "key": "DICT:3",
+      "val": "16000"
+    },
+    {
+      "key": "DICT:4",
+      "val": "16000"
+    },
+    {
+      "key": "FEATURE_LENGTH_MEAN",
+      "val": "3.7307692307692313"
+    },
+    {
+      "key": "FEATURE_LENGTH_STD_DEV",
+      "val": "0.7775701798650618"
+    },
+    {
+      "key": "MEAN_FEATURE_VARIANCE",
+      "val": "0.6046153846153846"
+    },
+    {
+      "key": "FEATURE_COUNT",
+      "val": "26"
+    }
+  ],
+  "numChromosomes": 4,
+  "chromosomes": [
+    {
+      "name": "1",
+      "binWidth": 2000,
+      "numBins": 1,
+      "longestFeature": 4,
+      "isOldV3Index": false,
+      "numFeatures": 14,
+      "startPosition": 647,
+      "blocks": [
+        {
+          "size": 378,
+          "start": 647
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "binWidth": 2000,
+      "numBins": 1,
+      "longestFeature": 3,
+      "isOldV3Index": false,
+      "numFeatures": 5,
+      "startPosition": 1025,
+      "blocks": [
+        {
+          "size": 132,
+          "start": 1025
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "binWidth": 2000,
+      "numBins": 1,
+      "longestFeature": 4,
+      "isOldV3Index": false,
+      "numFeatures": 4,
+      "startPosition": 1157,
+      "blocks": [
+        {
+          "size": 105,
+          "start": 1157
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "binWidth": 2000,
+      "numBins": 1,
+      "longestFeature": 4,
+      "isOldV3Index": false,
+      "numFeatures": 3,
+      "startPosition": 1262,
+      "blocks": [
+        {
+          "size": 81,
+          "start": 1262
+        }
+      ]
+    }
+  ],
+  "chromosomeEntries": {
+    "1": [
+      0
+    ],
+    "2": [
+      1
+    ],
+    "3": [
+      2
+    ],
+    "4": [
+      3
     ]
   }
 }

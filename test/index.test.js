@@ -48,4 +48,16 @@ describe('index reader', () => {
       }
     })
   })
+  it(`can get blocks from phased.vcf.idx, which has whitespace in one of the chr names`, async () => {
+    const file = 'phased.vcf.idx'
+    const fn = require.resolve(`./data/${file}`)
+    const buf = await readFile(fn)
+    const index = read(buf)
+    expect(index.getBlocks('foo', 120, 400)).toEqual([])
+    expect(index.getBlocks('20', 0, 9000000)).toHaveLength(2)
+    expect(index.getBlocks('20', 0, 9000000)).toEqual([
+      { size: 102, start: 1142 },
+      { size: 124, start: 1244 },
+    ])
+  })
 })

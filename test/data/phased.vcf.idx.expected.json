@@ -1,74 +1,76 @@
 {
-  "header": {
-    "magic": "TIDX",
-    "type": "linear",
-    "version": 3,
-    "fileName": "file:///Users/emeryj/hellbender/htsjdk/src/test/resources/htsjdk/variant/phased.vcf",
-    "fileSize": 1368,
-    "fileTimestamp": 1512504410000,
-    "fileMD5": "",
-    "flags": 0,
-    "numProperties": 4,
-    "properties": [
-      {
-        "key": "FEATURE_LENGTH_MEAN",
-        "val": "1.0"
-      },
-      {
-        "key": "FEATURE_LENGTH_STD_DEV",
-        "val": "0.0"
-      },
-      {
-        "key": "MEAN_FEATURE_VARIANCE",
-        "val": "0.0"
-      },
-      {
-        "key": "FEATURE_COUNT",
-        "val": "2"
-      }
-    ]
-  },
-  "data": {
-    "numChromosomes": 2,
-    "chromosomes": [
-      {
-        "name": " 20",
-        "binWidth": 16000,
-        "numBins": 2,
-        "longestFeature": 1,
-        "isOldV3Index": false,
-        "numFeatures": 1,
-        "startPosition": 1142,
-        "blocks": [
-          {
-            "size": 0,
-            "start": 1142
-          },
-          {
-            "size": 102,
-            "start": 1142
-          }
-        ]
-      },
-      {
-        "name": "20",
-        "binWidth": 1024000,
-        "numBins": 2,
-        "longestFeature": 1,
-        "isOldV3Index": false,
-        "numFeatures": 1,
-        "startPosition": 1244,
-        "blocks": [
-          {
-            "size": 0,
-            "start": 1244
-          },
-          {
-            "size": 124,
-            "start": 1244
-          }
-        ]
-      }
+  "magic": "TIDX",
+  "type": "linear",
+  "version": 3,
+  "fileName": "file:///Users/emeryj/hellbender/htsjdk/src/test/resources/htsjdk/variant/phased.vcf",
+  "fileSize": 1368,
+  "fileTimestamp": 1512504410000,
+  "fileMD5": "",
+  "flags": 0,
+  "numProperties": 4,
+  "properties": [
+    {
+      "key": "FEATURE_LENGTH_MEAN",
+      "val": "1.0"
+    },
+    {
+      "key": "FEATURE_LENGTH_STD_DEV",
+      "val": "0.0"
+    },
+    {
+      "key": "MEAN_FEATURE_VARIANCE",
+      "val": "0.0"
+    },
+    {
+      "key": "FEATURE_COUNT",
+      "val": "2"
+    }
+  ],
+  "numChromosomes": 2,
+  "chromosomes": [
+    {
+      "name": " 20",
+      "binWidth": 16000,
+      "numBins": 2,
+      "longestFeature": 1,
+      "isOldV3Index": false,
+      "numFeatures": 1,
+      "startPosition": 1142,
+      "blocks": [
+        {
+          "size": 0,
+          "start": 1142
+        },
+        {
+          "size": 102,
+          "start": 1142
+        }
+      ]
+    },
+    {
+      "name": "20",
+      "binWidth": 1024000,
+      "numBins": 2,
+      "longestFeature": 1,
+      "isOldV3Index": false,
+      "numFeatures": 1,
+      "startPosition": 1244,
+      "blocks": [
+        {
+          "size": 0,
+          "start": 1244
+        },
+        {
+          "size": 124,
+          "start": 1244
+        }
+      ]
+    }
+  ],
+  "chromosomeEntries": {
+    "20": [
+      0,
+      1
     ]
   }
 }

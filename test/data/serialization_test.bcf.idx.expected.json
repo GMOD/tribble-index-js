@@ -1,453 +1,460 @@
 {
-  "header": {
-    "magic": "TIDX",
-    "type": "linear",
-    "version": 3,
-    "fileName": "/Users/msooknah/Documents/scratch/picardgroup/vcf_test_files/vcfFormatTest2.bcf",
-    "fileSize": 7490,
-    "fileTimestamp": 1427306276000,
-    "fileMD5": "",
-    "flags": 0,
-    "numProperties": 7,
-    "properties": [
-      {
-        "key": "DICT:1",
-        "val": "249250621"
-      },
-      {
-        "key": "DICT:2",
-        "val": "243199373"
-      },
-      {
-        "key": "DICT:3",
-        "val": "198022430"
-      },
-      {
-        "key": "FEATURE_LENGTH_MEAN",
-        "val": "1.8333333333333333"
-      },
-      {
-        "key": "FEATURE_LENGTH_STD_DEV",
-        "val": "0.38924947208076144"
-      },
-      {
-        "key": "MEAN_FEATURE_VARIANCE",
-        "val": "0.1515151515151515"
-      },
-      {
-        "key": "FEATURE_COUNT",
-        "val": "12"
-      }
-    ]
-  },
-  "data": {
-    "numChromosomes": 3,
-    "chromosomes": [
-      {
-        "name": "1",
-        "binWidth": 1024000,
-        "numBins": 37,
-        "longestFeature": 2,
-        "isOldV3Index": false,
-        "numFeatures": 4,
-        "startPosition": 4824,
-        "blocks": [
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 4824
-          },
-          {
-            "size": 232,
-            "start": 4824
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5056
-          },
-          {
-            "size": 231,
-            "start": 5056
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5287
-          },
-          {
-            "size": 227,
-            "start": 5287
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 0,
-            "start": 5514
-          },
-          {
-            "size": 230,
-            "start": 5514
-          }
-        ]
-      },
-      {
-        "name": "2",
-        "binWidth": 1024000,
-        "numBins": 29,
-        "longestFeature": 1,
-        "isOldV3Index": false,
-        "numFeatures": 4,
-        "startPosition": 5744,
-        "blocks": [
-          {
-            "size": 0,
-            "start": 5744
-          },
-          {
-            "size": 231,
-            "start": 5744
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 5975
-          },
-          {
-            "size": 220,
-            "start": 5975
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6195
-          },
-          {
-            "size": 220,
-            "start": 6195
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 0,
-            "start": 6415
-          },
-          {
-            "size": 220,
-            "start": 6415
-          }
-        ]
-      },
-      {
-        "name": "3",
-        "binWidth": 1024000,
-        "numBins": 27,
-        "longestFeature": 1,
-        "isOldV3Index": false,
-        "numFeatures": 4,
-        "startPosition": 6635,
-        "blocks": [
-          {
-            "size": 0,
-            "start": 6635
-          },
-          {
-            "size": 198,
-            "start": 6635
-          },
-          {
-            "size": 0,
-            "start": 6833
-          },
-          {
-            "size": 0,
-            "start": 6833
-          },
-          {
-            "size": 0,
-            "start": 6833
-          },
-          {
-            "size": 0,
-            "start": 6833
-          },
-          {
-            "size": 0,
-            "start": 6833
-          },
-          {
-            "size": 0,
-            "start": 6833
-          },
-          {
-            "size": 231,
-            "start": 6833
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7064
-          },
-          {
-            "size": 207,
-            "start": 7064
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 0,
-            "start": 7271
-          },
-          {
-            "size": 219,
-            "start": 7271
-          }
-        ]
-      }
+  "magic": "TIDX",
+  "type": "linear",
+  "version": 3,
+  "fileName": "/Users/msooknah/Documents/scratch/picardgroup/vcf_test_files/vcfFormatTest2.bcf",
+  "fileSize": 7490,
+  "fileTimestamp": 1427306276000,
+  "fileMD5": "",
+  "flags": 0,
+  "numProperties": 7,
+  "properties": [
+    {
+      "key": "DICT:1",
+      "val": "249250621"
+    },
+    {
+      "key": "DICT:2",
+      "val": "243199373"
+    },
+    {
+      "key": "DICT:3",
+      "val": "198022430"
+    },
+    {
+      "key": "FEATURE_LENGTH_MEAN",
+      "val": "1.8333333333333333"
+    },
+    {
+      "key": "FEATURE_LENGTH_STD_DEV",
+      "val": "0.38924947208076144"
+    },
+    {
+      "key": "MEAN_FEATURE_VARIANCE",
+      "val": "0.1515151515151515"
+    },
+    {
+      "key": "FEATURE_COUNT",
+      "val": "12"
+    }
+  ],
+  "numChromosomes": 3,
+  "chromosomes": [
+    {
+      "name": "1",
+      "binWidth": 1024000,
+      "numBins": 37,
+      "longestFeature": 2,
+      "isOldV3Index": false,
+      "numFeatures": 4,
+      "startPosition": 4824,
+      "blocks": [
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 4824
+        },
+        {
+          "size": 232,
+          "start": 4824
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5056
+        },
+        {
+          "size": 231,
+          "start": 5056
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5287
+        },
+        {
+          "size": 227,
+          "start": 5287
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 0,
+          "start": 5514
+        },
+        {
+          "size": 230,
+          "start": 5514
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "binWidth": 1024000,
+      "numBins": 29,
+      "longestFeature": 1,
+      "isOldV3Index": false,
+      "numFeatures": 4,
+      "startPosition": 5744,
+      "blocks": [
+        {
+          "size": 0,
+          "start": 5744
+        },
+        {
+          "size": 231,
+          "start": 5744
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 5975
+        },
+        {
+          "size": 220,
+          "start": 5975
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6195
+        },
+        {
+          "size": 220,
+          "start": 6195
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 0,
+          "start": 6415
+        },
+        {
+          "size": 220,
+          "start": 6415
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "binWidth": 1024000,
+      "numBins": 27,
+      "longestFeature": 1,
+      "isOldV3Index": false,
+      "numFeatures": 4,
+      "startPosition": 6635,
+      "blocks": [
+        {
+          "size": 0,
+          "start": 6635
+        },
+        {
+          "size": 198,
+          "start": 6635
+        },
+        {
+          "size": 0,
+          "start": 6833
+        },
+        {
+          "size": 0,
+          "start": 6833
+        },
+        {
+          "size": 0,
+          "start": 6833
+        },
+        {
+          "size": 0,
+          "start": 6833
+        },
+        {
+          "size": 0,
+          "start": 6833
+        },
+        {
+          "size": 0,
+          "start": 6833
+        },
+        {
+          "size": 231,
+          "start": 6833
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7064
+        },
+        {
+          "size": 207,
+          "start": 7064
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 0,
+          "start": 7271
+        },
+        {
+          "size": 219,
+          "start": 7271
+        }
+      ]
+    }
+  ],
+  "chromosomeEntries": {
+    "1": [
+      0
+    ],
+    "2": [
+      1
+    ],
+    "3": [
+      2
     ]
   }
 }

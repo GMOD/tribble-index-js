@@ -41,10 +41,7 @@ const treeParser = parser()
 
 const headerParser = parser()
   .string('magic', { length: 4 })
-  .uint32('type', {
-    formatter: typeNum =>
-      [undefined, 'linear', 'intervalTree'][typeNum] || typeNum,
-  })
+  .uint32('type')
   .uint32('version', {
     formatter: ver => {
       if (ver !== 3)
@@ -67,15 +64,12 @@ const headerParser = parser()
     length: 'numProperties',
   })
 
-const indexParser = parser()
-  .nest('header', { type: headerParser })
-  .choice('data', {
-    tag: 'indexType',
-    choices: {
-      1: linearParser,
-      2: treeParser,
-    },
-    defaultChoice: linearParser,
-  })
+const indexParser = headerParser.choice(null, {
+  tag: 'type',
+  choices: {
+    1: linearParser,
+    2: treeParser,
+  },
+})
 
 export default indexParser
