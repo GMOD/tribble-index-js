@@ -5,8 +5,11 @@ const { Parser } = require('binary-parser')
 
 function formatLongLE(fieldName) {
   return b => {
-    let result =
-      b[7] * 2 ** 56 +
+    if (b[7] || b[6] & 224) {
+      throw new Error(`integer overflow reading ${fieldName}`)
+    }
+
+    const result =
       b[6] * 2 ** 48 +
       b[5] * 2 ** 40 +
       b[4] * 2 ** 32 +
@@ -14,15 +17,6 @@ function formatLongLE(fieldName) {
       (b[2] << 16) +
       (b[1] << 8) +
       b[0]
-
-    if (b[7] || b[6] & 224) {
-      result = Number(result)
-      result.overflow = true
-    }
-
-    if (result.overflow) {
-      throw new Error(`integer overflow reading ${fieldName}`)
-    }
 
     return result
   }
