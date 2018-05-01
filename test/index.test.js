@@ -63,4 +63,17 @@ describe('index reader', () => {
     expect(index.hasRefSeq('20')).toEqual(true)
     expect(index.hasRefSeq(' 20')).toEqual(true)
   })
+
+  it(`can get blocks from phased.vcf.idx, which has whitespace in one of the chr names`, async () => {
+    const file = '1801160099-N32519_26611_S51_56704.hard-filtered.vcf.idx'
+    const fn = require.resolve(`./data/${file}`)
+    const buf = await readFile(fn)
+    const index = read(buf)
+    expect(index.getBlocks('17', 59760996, 59760998)).toHaveLength(1)
+    expect(index.getBlocks('17', 59760995, 59760996)).toHaveLength(1)
+    expect(index.getBlocks('17', 59856749, 59857999)).toHaveLength(1)
+    expect(index.hasRefSeq('12')).toEqual(true)
+    expect(index.hasRefSeq('20')).toEqual(false)
+    expect(index.hasRefSeq(' 20')).toEqual(false)
+  })
 })

@@ -15,7 +15,9 @@ class LinearBinnedIndex extends BaseIndex {
     this.type = 'linear'
     this.chromosomeEntries = {}
 
-    this.firstDataOffset = Math.min(...this.chromosomes.map(c => c.startPosition))
+    this.firstDataOffset = Math.min(
+      ...this.chromosomes.map(c => c.startPosition),
+    )
 
     this.chromosomes.forEach((chr, i) => {
       // convert the block positions into block start and size
