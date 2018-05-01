@@ -1,8 +1,8 @@
-# tribble-js
+# tribble-index
 
 [![Generated with nod](https://img.shields.io/badge/generator-nod-2196F3.svg?style=flat-square)](https://github.com/diegohaz/nod)
-[![NPM version](https://img.shields.io/npm/v/tribble-js.svg?style=flat-square)](https://npmjs.org/package/tribble-js)
-[![Build Status](https://img.shields.io/travis/rbuels/tribble-js/master.svg?style=flat-square)](https://travis-ci.org/rbuels/tribble-js) 
+[![NPM version](https://img.shields.io/npm/v/tribble-index.svg?style=flat-square)](https://npmjs.org/package/tribble-index)
+[![Build Status](https://img.shields.io/travis/rbuels/tribble-index/master.svg?style=flat-square)](https://travis-ci.org/rbuels/tribble-index) 
 
 Read htsjdk Tribble indexes (e.g. \*.vcf.idx files) using pure JavaScript. Supports only Tribble version 3 linear indexes right now.
 
