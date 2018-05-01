@@ -4,7 +4,7 @@
 [![NPM version](https://img.shields.io/npm/v/tribble-js.svg?style=flat-square)](https://npmjs.org/package/tribble-js)
 [![Build Status](https://img.shields.io/travis/rbuels/tribble-js/master.svg?style=flat-square)](https://travis-ci.org/rbuels/tribble-js) 
 
-Read htsjdk Tribble indexes (e.g. *.vcf.idx files) using pure JavaScript. Supports only Tribble version 3 linear indexes right now.
+Read htsjdk Tribble indexes (e.g. \*.vcf.idx files) using pure JavaScript. Supports only Tribble version 3 linear indexes right now.
 
 ## Install
 
