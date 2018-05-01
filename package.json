@@ -1,6 +1,6 @@
 {
   "name": "tribble-index",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Read htsjdk Tribble indexes using pure JavaScript",
   "license": "MIT",
   "repository": "rbuels/tribble-index",
