@@ -2,7 +2,12 @@
   "presets": [
     ["env", {
       "targets": {
-        "node": 6
+        "node": 6,
+        "browsers": [
+          "last 2 versions",
+          "safari >= 9",
+          "ie >= 10",
+        ]
       }
     }],
     "stage-2"
