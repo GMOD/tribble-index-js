@@ -28,7 +28,7 @@ function formatLongLE(fieldName) {
  * @param {string} fieldName
  * @private
  */
-export function readLongFromArray(fieldName) {
+function readLongFromArray(fieldName) {
   return [
     fieldName,
     {
@@ -43,6 +43,8 @@ export function readLongFromArray(fieldName) {
  * Instantiates and returns a new little-endian binary-parser
  * @private
  */
-export function parser() {
+function parser() {
   return new Parser().endianess('little')
 }
+
+module.exports = { readLongFromArray, parser }

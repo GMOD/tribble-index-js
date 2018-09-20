@@ -72,4 +72,4 @@ const indexParser = headerParser.choice(null, {
   },
 })
 
-export default indexParser
+module.exports = indexParser
