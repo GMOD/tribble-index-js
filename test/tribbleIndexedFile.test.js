@@ -47,25 +47,26 @@ describe('tabix file', () => {
     items.clear()
     await f.getLines('ctgA', 3001, 3001, items.callback)
     expect(items.length).toEqual(0)
+    const headerString = await f.getHeader()
+    expect(headerString.length).toEqual(10431)
+    expect(headerString[headerString.length - 1]).toEqual('\n')
+    expect(await f.getMetadata()).toEqual({
+      fileMD5: '',
+      fileName:
+        'file:///home/garrett/Projects/tribble-index-js/test/data/volvox.test.vcf',
+      fileSize: 1922918,
+      fileTimestamp: 1537538110688,
+      firstDataOffset: 10431,
+      flags: 0,
+      magic: 'TIDX',
+      properties: [],
+      type: 'linear',
+      version: 3,
+      chromosomes: ['contigA'],
+    })
   })
 })
 
-// const headerString = await f.getHeader()
-// expect(headerString.length).toEqual(10431)
-// expect(headerString[headerString.length - 1]).toEqual('\n')
-//   expect(await f.getMetadata()).toEqual({
-//     columnNumbers: { end: 0, ref: 1, start: 2 },
-//     coordinateType: '1-based-closed',
-//     maxBlockSize: 1 << 16,
-//     format: 'VCF',
-//     metaChar: '#',
-//     firstDataLine: new VirtualOffset(0, 10431),
-//     refIdToName: ['ctgA'],
-//     refNameToId: { ctgA: 0 },
-//     skipLines: 0,
-//     maxBinNumber: 37449,
-//   })
-// })
 //   it('can count lines with TBI', async () => {
 //     const f = new TabixIndexedFile({
 //       path: require.resolve('./data/volvox.test.vcf.gz'),

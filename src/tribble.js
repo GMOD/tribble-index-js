@@ -79,6 +79,26 @@ class LinearBinnedIndex extends BaseIndex {
   }
 
   /**
+   * Returns an object like { fileMD5 fileName fileSize fileTimestamp
+   * firstDataOffset flags magic properties type version chromosomes}
+   */
+  getMetadata() {
+    return {
+      fileMD5: this.fileMD5,
+      fileName: this.fileName,
+      fileSize: this.fileSize,
+      fileTimestamp: this.fileTimestamp,
+      firstDataOffset: this.firstDataOffset,
+      flags: this.flags,
+      magic: this.magic,
+      properties: this.properties,
+      type: this.type,
+      version: this.version,
+      chromosomes: Object.keys(this.chromosomeEntries),
+    }
+  }
+
+  /**
    * Return true if the given reference sequence is present in the index,
    * false otherwise
    * @param {string} refName

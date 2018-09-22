@@ -169,55 +169,46 @@ class TribbleIndexedFile {
     return freshPromise
   }
 
-  // async getMetadata() {
-  //   return this.index.getMetadata()
-  // }
+  async getMetadata() {
+    return this.index.getMetadata()
+  }
 
-  // /**
-  //  * get a buffer containing the "header" region of
-  //  * the file, which are the bytes up to the first
-  //  * non-meta line
-  //  *
-  //  * @returns {Promise} for a buffer
-  //  */
-  // async getHeaderBuffer() {
-  //   const { firstDataLine, metaChar, maxBlockSize } = await this.getMetadata()
-  //   const maxFetch =
-  //     firstDataLine && firstDataLine.blockPosition
-  //       ? firstDataLine.blockPosition + maxBlockSize
-  //       : maxBlockSize
-  //   // TODO: what if we don't have a firstDataLine, and the header
-  //   // actually takes up more than one block? this case is not covered here
+  /**
+   * get an array of reference sequence names
+   *
+   * reference sequence renaming is not applied to these names.
+   *
+   * @returns {Promise} for an array of string sequence names
+   */
+  async getReferenceSequenceNames() {
+    const metadata = await this.getMetadata()
+    return metadata.chromosomes
+  }
 
-  //   let bytes = await this._readRegion(0, maxFetch)
-  //   // trim off lines after the last non-meta line
-  //   if (metaChar) {
-  //     // trim backward from the end
-  //     let lastNewline = -1
-  //     const newlineByte = '\n'.charCodeAt(0)
-  //     const metaByte = metaChar.charCodeAt(0)
-  //     for (let i = 0; i < bytes.length; i += 1) {
-  //       if (bytes[i] === newlineByte) {
-  //         lastNewline = i
-  //         i += 1
-  //         if (bytes[i] !== metaByte) break
-  //       }
-  //     }
-  //     bytes = bytes.slice(0, lastNewline + 1)
-  //   }
-  //   return bytes
-  // }
+  /**
+   * get a buffer containing the "header" region of
+   * the file, which are the bytes up to the first
+   * non-meta line
+   *
+   * @returns {Promise} for a buffer
+   */
+  async getHeaderBuffer() {
+    const { firstDataOffset } = await this.getMetadata()
+    const buffer = Buffer.alloc(firstDataOffset)
+    await this.filehandle.read(buffer, 0, firstDataOffset, 0)
+    return buffer
+  }
 
-  // /**
-  //  * get a string containing the "header" region of the
-  //  * file, is the portion up to the first non-meta line
-  //  *
-  //  * @returns {Promise} for a string
-  //  */
-  // async getHeader() {
-  //   const bytes = await this.getHeaderBuffer()
-  //   return bytes.toString('utf8')
-  // }
+  /**
+   * get a string containing the "header" region of the
+   * file, is the portion up to the first non-meta line
+   *
+   * @returns {Promise} for a string
+   */
+  async getHeader() {
+    const bytes = await this.getHeaderBuffer()
+    return bytes.toString('utf8')
+  }
 
   // /**
   //  * get an array of reference sequence names, in the order in which
