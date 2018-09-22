@@ -16,6 +16,8 @@ class TribbleIndexedFile {
    * @param {string} [args.tribblePath]
    * @param {filehandle} [args.tribbleFilehandle]
    * @param {string} [args.metaChar] character that denotes the beginning of a header line
+   * @param {boolean} [args.oneBasedClosed] whether the indexed file uses one-based closed coordinates.
+   * default false (implying zero-based half-open coordinates)
    * @param {number} [args.chunkSizeLimit] maximum number of bytes to fetch in a single `getLines` call.
    * default 2MiB
    * @param {number} [args.yieldLimit] maximum number of lines to parse without yielding.
@@ -31,6 +33,7 @@ class TribbleIndexedFile {
     tribblePath,
     tribbleFilehandle,
     metaChar = '#',
+    oneBasedClosed = false,
     chunkSizeLimit = 2000000,
     yieldLimit = 300,
     renameRefSeqs = n => n,
@@ -51,6 +54,7 @@ class TribbleIndexedFile {
     }
 
     this.metaChar = metaChar
+    this.oneBasedClosed = oneBasedClosed
     this.chunkSizeLimit = chunkSizeLimit
     this.yieldLimit = yieldLimit
     this.renameRefSeqCallback = renameRefSeqs
@@ -73,6 +77,7 @@ class TribbleIndexedFile {
   }
 
   async getLines(ref, min, max, lineCallback) {
+    if (this.oneBasedClosed) max += 1
     const index = await this._loadIndex()
     const originalRef = this.index.renamedRefToRef[ref]
     const blocks = index.getBlocks(originalRef, min, max)

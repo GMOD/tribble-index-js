@@ -1,59 +1,58 @@
 const TribbleIndexedFile = require('../src/tribbleIndexedFile')
 
-// class RecordCollector {
-//   constructor() {
-//     this.clear()
-//     this.callback = (line, fileOffset) => {
-//       this.records.push({ line, fileOffset })
-//       this.length += 1
-//     }
-//   }
-//   forEach(cb) {
-//     this.records.forEach(cb)
-//   }
-//   clear() {
-//     this.records = []
-//     this.length = 0
-//   }
-// }
+class RecordCollector {
+  constructor() {
+    this.clear()
+    this.callback = line => {
+      this.records.push(line)
+      this.length += 1
+    }
+  }
+  forEach(cb) {
+    this.records.forEach(cb)
+  }
+  clear() {
+    this.records = []
+    this.length = 0
+  }
+}
 describe('tabix file', () => {
-  const lines = []
   it('can read ctgA:1000..4000', async () => {
     const f = new TribbleIndexedFile({
       path: require.resolve('./data/volvox.test.vcf'),
       tribblePath: require.resolve('./data/volvox.test.vcf.idx'),
+      oneBasedClosed: true,
       yieldLimit: 10,
       renameRefSeqs: n => n.replace('contig', 'ctg'),
     })
-    // const items = new RecordCollector()
-    // await f.getLines('ctgA', 1000, 4000, items.callback)
-    await f.getLines('ctgA', 1000, 4000, l => lines.push(l))
-    console.log(lines)
+    const items = new RecordCollector()
+    await f.getLines('ctgA', 1000, 4000, items.callback)
+    expect(items.length).toEqual(8)
+    items.forEach(line => {
+      line = line.split('\t')
+      expect(line[0]).toEqual('contigA')
+      expect(parseInt(line[1], 10)).toBeGreaterThan(999)
+      expect(parseInt(line[1], 10)).toBeLessThan(4001)
+    })
+
+    items.clear()
+    await f.getLines('ctgA', 2999, 2999, items.callback)
+    expect(items.length).toEqual(0)
+    items.clear()
+    await f.getLines('ctgA', 2999, 3000, items.callback)
+    expect(items.length).toEqual(1)
+    items.clear()
+    await f.getLines('ctgA', 3000, 3001, items.callback)
+    expect(items.length).toEqual(1)
+    items.clear()
+    await f.getLines('ctgA', 3001, 3001, items.callback)
+    expect(items.length).toEqual(0)
   })
 })
-//   expect(items.length).toEqual(8)
-//   items.forEach(({ line, fileOffset }) => {
-//     line = line.split('\t')
-//     expect(line[0]).toEqual('contigA')
-//     expect(parseInt(line[1], 10)).toBeGreaterThan(999)
-//     expect(parseInt(line[1], 10)).toBeLessThan(4001)
-//     expect(fileOffset).toBeGreaterThanOrEqual(0)
-//   })
 
-//   items.clear()
-//   await f.getLines('ctgA', 3000, 3000, items.callback)
-//   expect(items.length).toEqual(0)
-//   items.clear()
-//   await f.getLines('ctgA', 2999, 3000, items.callback)
-//   expect(items.length).toEqual(1)
-//   items.clear()
-//   await f.getLines('ctgA', 3000, 3001, items.callback)
-//   expect(items.length).toEqual(0)
-
-//   const headerString = await f.getHeader()
-//   expect(headerString.length).toEqual(10431)
-//   expect(headerString[headerString.length - 1]).toEqual('\n')
-
+// const headerString = await f.getHeader()
+// expect(headerString.length).toEqual(10431)
+// expect(headerString[headerString.length - 1]).toEqual('\n')
 //   expect(await f.getMetadata()).toEqual({
 //     columnNumbers: { end: 0, ref: 1, start: 2 },
 //     coordinateType: '1-based-closed',
