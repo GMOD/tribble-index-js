@@ -234,14 +234,16 @@ class TribbleIndexedFile {
   //    * true if line is a data line that overlaps the given region
   //    */
 
-  //   /**
-  //    * return the approximate number of data lines in the given reference sequence
-  //    * @param {string} refSeq reference sequence name
-  //    * @returns {Promise} for number of data lines present on that reference sequence
-  //    */
-  //   async lineCount(refSeq) {
-  //     return this.index.lineCount(refSeq)
-  //   }
+  /**
+   * return the approximate number of data lines in the given reference sequence
+   * returns -1 if the reference sequence is not found
+   * @param {string} refSeq reference sequence name
+   * @returns {Promise} for number of data lines present on that reference sequence
+   */
+  async lineCount(refSeq) {
+    const originalRef = this.index.renamedRefToRef[refSeq]
+    return this.index.lineCount(originalRef)
+  }
 }
 
 module.exports = TribbleIndexedFile

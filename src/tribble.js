@@ -108,6 +108,16 @@ class LinearBinnedIndex extends BaseIndex {
     const regularizedChrName = LinearBinnedIndex.regularizeChrName(refName)
     return !!this.chromosomeEntries[regularizedChrName]
   }
+
+  async lineCount(refName) {
+    let lc = 0
+    const entries = this.chromosomeEntries[refName]
+    if (!entries) return -1
+    entries.forEach(entry => {
+      lc += this.chromosomes[entry].numFeatures
+    })
+    return lc
+  }
 }
 
 class IntervalTreeIndex extends BaseIndex {
