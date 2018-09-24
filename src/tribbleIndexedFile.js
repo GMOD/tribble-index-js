@@ -16,6 +16,8 @@ class TribbleIndexedFile {
    * @param {string} [args.tribblePath]
    * @param {filehandle} [args.tribbleFilehandle]
    * @param {string} [args.metaChar] character that denotes the beginning of a header line
+   * @param {object} [args.columnNumbers] object like {ref start end} defining the (1-based) columns in
+   * the file. end may be set to -1 if not present. default {ref: 1, start: 2, end: -1}
    * @param {boolean} [args.oneBasedClosed] whether the indexed file uses one-based closed coordinates.
    * default false (implying zero-based half-open coordinates)
    * @param {number} [args.chunkSizeLimit] maximum number of bytes to fetch in a single `getLines` call.
@@ -33,6 +35,7 @@ class TribbleIndexedFile {
     tribblePath,
     tribbleFilehandle,
     metaChar = '#',
+    columnNumbers = { ref: 1, start: 2, end: -1 },
     oneBasedClosed = false,
     chunkSizeLimit = 2000000,
     yieldLimit = 300,
@@ -54,6 +57,7 @@ class TribbleIndexedFile {
     }
 
     this.metaChar = metaChar
+    this.columnNumbers = columnNumbers
     this.oneBasedClosed = oneBasedClosed
     this.chunkSizeLimit = chunkSizeLimit
     this.yieldLimit = yieldLimit
@@ -85,6 +89,7 @@ class TribbleIndexedFile {
       )
     if (!lineCallback) throw new TypeError('line callback must be provided')
 
+    if (!this.oneBasedClosed && min === max) return
     if (this.oneBasedClosed) max += 1
     const index = await this._loadIndex()
     let originalRef = this.index.renamedRefToRef[ref]
@@ -128,8 +133,6 @@ class TribbleIndexedFile {
   }
 
   /**
-   * @param {object} metadata metadata object from the parsed index,
-   * containing columnNumbers, metaChar, and maxColumn
    * @param {string} regionRefName
    * @param {number} regionStart region start coordinate (0-based-half-open)
    * @param {number} regionEnd region end coordinate (0-based-half-open)
@@ -145,28 +148,36 @@ class TribbleIndexedFile {
     // basically, we want to avoid doing a split, because if the lines are really long
     // that could lead to us allocating a bunch of extra memory, which is slow
 
-    let currentColumnNumber = 0
+    const { ref, start, end } = this.columnNumbers
+    const maxColumn = Math.max(ref, start, end)
+
+    let currentColumnNumber = 1
     let currentColumnStart = 0
     let startCoordinate
     for (let i = 0; i < line.length; i += 1) {
       if (line[i] === '\t') {
-        if (currentColumnNumber === 0) {
+        if (currentColumnNumber === ref) {
           let refName = line.slice(currentColumnStart, i)
           refName = this.renameRefSeqCallback(regionRefName)
           if (refName !== regionRefName) return { overlaps: false }
-        } else if (currentColumnNumber === 1) {
+        } else if (currentColumnNumber === start) {
           startCoordinate = parseInt(line.slice(currentColumnStart, i), 10)
-          // we convert to 0-based-half-open
           if (startCoordinate >= regionEnd) return { overlaps: false }
-          // assume the feature is 1 bp long
-          if (startCoordinate + 1 <= regionStart) return { overlaps: false }
-          return { startCoordinate, overlaps: true }
+          if (end === -1) {
+            // no end column, so assume the feature is 1 bp long
+            if (startCoordinate + 1 <= regionStart) return { overlaps: false }
+          }
+        } else if (currentColumnNumber === end) {
+          // this will never match if there is no end column
+          const endCoordinate = parseInt(line.slice(currentColumnStart, i), 10)
+          if (endCoordinate <= regionStart) return { overlaps: false }
         }
         currentColumnStart = i + 1
         currentColumnNumber += 1
+        if (currentColumnNumber > maxColumn) break
       }
     }
-    return { overlaps: false }
+    return { overlaps: true }
   }
 
   _getBlockCache(cacheKey, fillCallback) {

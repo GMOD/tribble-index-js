@@ -1,0 +1,241 @@
+ctgA	0	50001	.	.	.	example	contig	.	Name=ctgA;multivalue=val1,val2,val3
+ctgA	999	1000	FakeSNP1	0.987	.	example	SNP	.	ID=FakeSNP1;Name=FakeSNP;Note=This is a fake SNP that should appear at 1000 with length 1;zero_length_insertion=True
+ctgA	999	1500	.	.	+	example	clone_start	.	Parent=b101.2
+ctgA	999	2000	.	.	.	example	remark	.	Name=Remark:hga;Alias=hga
+ctgA	999	20000	b101.2	.	.	example	BAC	.	ID=b101.2;Name=b101.2;Note=Fingerprinted BAC with end reads
+ctgA	1049	1200	.	.	+	example	five_prime_UTR	.	Parent=EDEN.1
+ctgA	1049	1200	.	.	+	example	five_prime_UTR	.	Parent=EDEN.2
+ctgA	1049	1500	.	.	+	est	match_part	.	Parent=Match1;Name=agt830.5;Target=agt830.5 1 451
+ctgA	1049	1500	.	.	+	est	match_part	.	Parent=Match3;Name=agt221.5;Target=agt221.5 1 451
+ctgA	1049	3202	Match1	.	+	est	EST_match	.	ID=Match1;Name=agt830.5;Target=agt830.5 1 654
+ctgA	1049	7300	Match3	.	+	est	EST_match	.	ID=Match3;Name=agt221.5;Target=agt221.5 1 1253
+ctgA	1049	9000	EDEN	.	+	example	gene	.	ID=EDEN;Name=EDEN;Note=protein kinase
+ctgA	1049	9000	EDEN.1	.	+	example	mRNA	.	ID=EDEN.1;Parent=EDEN;Name=EDEN.1;Note=Eden splice form 1;Index=1
+ctgA	1049	9000	EDEN.2	.	+	example	mRNA	.	ID=EDEN.2;Parent=EDEN;Name=EDEN.2;Note=Eden splice form 2;Index=1
+ctgA	1099	2000	.	.	+	example	protein_coding_primary_transcript	.	Name=Gene:hga;Alias=hga
+ctgA	1149	1500	.	.	+	est	match_part	.	Parent=Match5;Name=agt767.5;Target=agt767.5 1 351
+ctgA	1149	7200	Match5	.	+	est	EST_match	.	ID=Match5;Name=agt767.5;Target=agt767.5 1 1153
+ctgA	1199	1900	.	.	+	example	polypeptide	.	Name=Protein:HGA;Alias=hga
+ctgA	1200	1500	.	.	+	example	CDS	0	Parent=EDEN.1
+ctgA	1200	1500	.	.	+	example	CDS	0	Parent=EDEN.2
+ctgA	1299	1500	.	.	+	example	five_prime_UTR	.	Parent=EDEN.3
+ctgA	1299	9000	EDEN.3	.	+	example	mRNA	.	ID=EDEN.3;Parent=EDEN;Name=EDEN.3;Note=Eden splice form 3;Index=1
+ctgA	1599	3000	.	.	-	example	protein_coding_primary_transcript	.	Name=Gene:hgb;Alias=hgb
+ctgA	1658	1984	.	.	+	example	remark	.	Name=f07;Note=This is an example
+ctgA	1799	2900	.	.	-	example	polypeptide	.	Name=Protein:HGB;Alias=hgb
+ctgA	2999	3202	.	.	+	est	match_part	.	Parent=Match1;Name=agt830.5;Target=agt830.5 452 654
+ctgA	2999	3300	.	.	+	example	five_prime_UTR	.	Parent=EDEN.3
+ctgA	2999	3902	.	.	+	example	CDS	0	Parent=EDEN.1
+ctgA	3013	6130	.	.	+	example	remark	.	Name=f06;Note=This is another example
+ctgA	3300	3902	.	.	+	example	CDS	0	Parent=EDEN.3
+ctgA	4714	5968	.	.	-	example	remark	.	Name=f05;Note=Ok! Ok! I get the message.
+ctgA	4999	5500	.	.	+	est	match_part	.	Parent=Match3;Name=agt221.5;Target=agt221.5 452 952
+ctgA	4999	5500	.	.	+	est	match_part	.	Parent=Match5;Name=agt767.5;Target=agt767.5 352 852
+ctgA	4999	5500	.	.	+	example	CDS	0	Parent=EDEN.1
+ctgA	4999	5500	.	.	+	example	CDS	0	Parent=EDEN.2
+ctgA	4999	5500	.	.	+	example	CDS	1	Parent=EDEN.3
+ctgA	5232	5302	.	.	-	example	match	.	Name=seg04
+ctgA	5409	5500	.	.	-	est	match_part	.	Parent=Match2;Name=agt830.3;Target=agt830.3 505 595
+ctgA	5409	7503	Match2	.	-	est	EST_match	.	ID=Match2;Name=agt830.3;Target=agt830.3 1 595
+ctgA	5799	6101	.	.	-	example	match	.	Name=seg04
+ctgA	6441	6854	.	.	-	example	match	.	Name=seg04
+ctgA	6884	7241	.	.	-	example	match	.	Name=seg03
+ctgA	6999	7200	.	.	+	est	match_part	.	Parent=Match5;Name=agt767.5;Target=agt767.5 853 1153
+ctgA	6999	7300	.	.	+	est	match_part	.	Parent=Match3;Name=agt221.5;Target=agt221.5 953 1253
+ctgA	6999	7503	.	.	-	est	match_part	.	Parent=Match2;Name=agt830.3;Target=agt830.3 1 504
+ctgA	6999	7600	.	.	+	example	CDS	1	Parent=EDEN.3
+ctgA	6999	7608	.	.	+	example	CDS	0	Parent=EDEN.1
+ctgA	6999	7608	.	.	+	example	CDS	0	Parent=EDEN.2
+ctgA	7105	7211	.	.	-	example	match	.	Name=seg04
+ctgA	7409	7737	.	.	-	example	match	.	Name=seg03
+ctgA	7499	8000	Match4	.	-	est	EST_match	.	ID=Match4;Name=agt221.3;Target=agt221.3 1 501
+ctgA	7600	9000	.	.	+	example	three_prime_UTR	.	Parent=EDEN.3
+ctgA	7608	9000	.	.	+	example	three_prime_UTR	.	Parent=EDEN.1
+ctgA	7608	9000	.	.	+	example	three_prime_UTR	.	Parent=EDEN.2
+ctgA	7694	8177	.	.	-	example	match	.	Name=seg04
+ctgA	7999	9000	Match6	.	-	est	EST_match	.	ID=Match6;Name=agt767.3;Target=agt767.3 1 1001
+ctgA	8054	8080	.	.	-	example	match	.	Name=seg03
+ctgA	8305	8999	.	.	-	example	match	.	Name=seg03
+ctgA	8544	8783	.	.	-	example	match	.	Name=seg04
+ctgA	8868	8935	.	.	-	example	match	.	Name=seg04
+ctgA	9403	9825	.	.	-	example	match	.	Name=seg04
+ctgA	9999	11500	.	.	+	bare_predicted	CDS	0	Name=Apple1;Note=CDS with no parent
+ctgA	11910	15561	.	.	+	example	polypeptide_domain	.	Name=m11;Note=kinase
+ctgA	12530	12895	.	.	+	example	match	.	Name=seg12
+ctgA	12999	17200	cds-Apple2	.	+	predicted	mRNA	0	ID=cds-Apple2;Name=Apple2;Note=mRNA with CDSs but no UTRs
+ctgA	13121	13449	.	.	+	example	match	.	Name=seg12
+ctgA	13279	16394	.	.	+	example	remark	.	Name=f08
+ctgA	13451	13745	.	.	+	example	match	.	Name=seg12
+ctgA	13499	13800	.	.	+	predicted	CDS	0	Parent=cds-Apple2
+ctgA	13800	14007	.	.	-	example	polypeptide_domain	.	Name=m05;Note=helix loop helix
+ctgA	13907	13965	.	.	+	example	match	.	Name=seg12
+ctgA	13997	14488	.	.	+	example	match	.	Name=seg12
+ctgA	14563	14899	.	.	+	example	match	.	Name=seg12
+ctgA	14730	17239	.	.	-	example	polypeptide_domain	.	Name=m14;Note=kinase
+ctgA	14999	15500	.	.	+	predicted	CDS	1	Parent=cds-Apple2
+ctgA	15184	15276	.	.	+	example	match	.	Name=seg12
+ctgA	15328	15533	.	.	+	example	remark	.	Name=f10
+ctgA	15395	16159	.	.	+	example	polypeptide_domain	.	Name=m03;Note=zinc finger
+ctgA	15638	15736	.	.	+	example	match	.	Name=seg12
+ctgA	15744	15870	.	.	+	example	match	.	Name=seg12
+ctgA	16499	17000	.	.	+	predicted	CDS	2	Parent=cds-Apple2
+ctgA	17022	17675	.	.	+	example	polypeptide_domain	.	Name=m08;Note=7-transmembrane
+ctgA	17399	17999	.	.	+	exonerate	UTR	.	Parent=rna-Apple3
+ctgA	17399	23000	rna-Apple3	.	+	exonerate	mRNA	.	ID=rna-Apple3;Name=Apple3;Note=mRNA with both CDSs and UTRs
+ctgA	17666	17690	.	.	+	example	polypeptide_domain	.	Name=m13;Note=DEAD box
+ctgA	17999	18800	.	.	+	exonerate	CDS	0	Parent=rna-Apple3
+ctgA	18047	18552	.	.	-	example	polypeptide_domain	.	Name=m07;Note=7-transmembrane
+ctgA	18508	18985	.	.	+	example	match	.	Name=seg08
+ctgA	18988	19388	.	.	+	example	match	.	Name=seg08
+ctgA	18999	19500	.	.	+	exonerate	CDS	1	Parent=rna-Apple3
+ctgA	19156	22915	.	.	-	example	remark	.	Name=f13
+ctgA	19248	19559	.	.	+	example	match	.	Name=seg06
+ctgA	19495	19962	.	.	+	example	match	.	Name=seg08
+ctgA	19499	20000	.	.	-	example	clone_end	.	Parent=b101.2
+ctgA	19974	20260	.	.	+	example	match	.	Name=seg06
+ctgA	20092	20580	.	.	+	example	match	.	Name=seg08
+ctgA	20378	20491	.	.	+	example	match	.	Name=seg06
+ctgA	20532	21005	.	.	+	example	match	.	Name=seg06
+ctgA	20969	21052	.	.	+	example	match	.	Name=seg08
+ctgA	20999	21200	.	.	+	exonerate	CDS	2	Parent=rna-Apple3
+ctgA	21121	21331	.	.	+	example	match	.	Name=seg06
+ctgA	21200	23000	.	.	+	exonerate	UTR	.	Parent=rna-Apple3
+ctgA	21269	21277	.	.	+	example	match	.	Name=seg08
+ctgA	21681	22176	.	.	+	example	match	.	Name=seg06
+ctgA	21684	22168	.	.	+	example	match	.	Name=seg08
+ctgA	21747	25612	.	.	+	example	polypeptide_domain	.	Name=m12;Note=kinase
+ctgA	22131	24633	.	.	+	example	remark	.	Name=f15
+ctgA	22373	22570	.	.	+	example	match	.	Name=seg06
+ctgA	22563	22869	.	.	+	example	match	.	Name=seg08
+ctgA	22957	23298	.	.	+	example	match	.	Name=seg08
+ctgA	23024	23427	.	.	+	example	match	.	Name=seg06
+ctgA	23071	23185	.	.	+	example	remark	.	Name=f14
+ctgA	23411	23469	.	.	+	example	match	.	Name=seg08
+ctgA	23931	23932	.	.	+	example	match	.	Name=seg08;zero_length_insertion=True
+ctgA	24227	24510	.	.	+	example	match	.	Name=seg11
+ctgA	24327	24787	.	.	+	example	match	.	Name=seg08
+ctgA	24561	28338	.	.	+	example	remark	.	Name=f02
+ctgA	24867	25012	.	.	+	example	match	.	Name=seg11
+ctgA	25211	25426	.	.	+	example	match	.	Name=seg11
+ctgA	25227	25367	.	.	+	example	match	.	Name=seg08
+ctgA	25793	25874	.	.	+	example	match	.	Name=seg11
+ctgA	26074	26519	.	.	+	example	match	.	Name=seg11
+ctgA	26121	26126	.	.	+	example	match	.	Name=seg02
+ctgA	26496	26869	.	.	+	example	match	.	Name=seg02
+ctgA	26502	26799	.	.	-	example	match	.	Name=seg05
+ctgA	26929	26940	.	.	+	example	match	.	Name=seg11
+ctgA	26974	27063	.	.	+	example	match	.	Name=seg11
+ctgA	27171	27185	.	.	-	example	match	.	Name=seg05
+ctgA	27200	27325	.	.	+	example	match	.	Name=seg02
+ctgA	27371	27433	.	.	+	example	match	.	Name=seg02
+ctgA	27414	27799	.	.	+	example	match	.	Name=seg11
+ctgA	27447	27860	.	.	-	example	match	.	Name=seg05
+ctgA	27564	27565	.	.	+	example	match	.	Name=seg02;zero_length_insertion=True
+ctgA	27812	28091	.	.	+	example	match	.	Name=seg02
+ctgA	27879	27943	.	.	+	example	match	.	Name=seg11
+ctgA	27886	28076	.	.	-	example	match	.	Name=seg05
+ctgA	28092	28201	.	.	+	example	match	.	Name=seg02
+ctgA	28224	28316	.	.	-	example	match	.	Name=seg05
+ctgA	28224	28346	.	.	+	example	match	.	Name=seg11
+ctgA	28328	28377	.	.	+	example	match	.	Name=seg02
+ctgA	28331	30033	.	.	-	example	polypeptide_domain	.	Name=m02;Note=HOX
+ctgA	28341	28447	.	.	-	example	polypeptide_domain	.	Name=m10;Note=DEAD box
+ctgA	28374	28570	.	.	+	example	match	.	Name=seg11
+ctgA	28757	29041	.	.	+	example	match	.	Name=seg11
+ctgA	28776	29058	.	.	-	example	match	.	Name=seg05
+ctgA	28828	29194	.	.	+	example	match	.	Name=seg02
+ctgA	29100	29302	.	.	+	example	match	.	Name=seg11
+ctgA	29512	29647	.	.	-	example	match	.	Name=seg05
+ctgA	29516	29702	.	.	+	example	match	.	Name=seg02
+ctgA	29603	29702	.	.	+	example	match	.	Name=seg11
+ctgA	29712	30061	.	.	+	example	match	.	Name=seg02
+ctgA	29770	29942	.	.	+	example	match	.	Name=seg10
+ctgA	29866	29885	.	.	+	example	match	.	Name=seg11
+ctgA	30041	30340	.	.	+	example	match	.	Name=seg10
+ctgA	30107	30216	.	.	-	example	match	.	Name=seg05
+ctgA	30240	30246	.	.	+	example	match	.	Name=seg11
+ctgA	30328	30774	.	.	+	example	match	.	Name=seg02
+ctgA	30464	30798	.	.	-	example	match	.	Name=seg05
+ctgA	30574	30738	.	.	+	example	match	.	Name=seg11
+ctgA	30577	31748	.	.	+	example	polypeptide_domain	.	Name=m06;Note=SUSHI repeat
+ctgA	30807	31306	.	.	+	example	match	.	Name=seg02
+ctgA	30809	31307	.	.	+	example	match	.	Name=seg10
+ctgA	31231	31236	.	.	-	example	match	.	Name=seg05
+ctgA	31420	31817	.	.	-	example	match	.	Name=seg05
+ctgA	31515	31729	.	.	+	example	match	.	Name=seg02
+ctgA	31752	32154	.	.	+	example	match	.	Name=seg02
+ctgA	31760	31984	.	.	+	example	match	.	Name=seg10
+ctgA	32009	32057	.	.	-	example	match	.	Name=seg05
+ctgA	32207	32680	.	.	-	example	match	.	Name=seg05
+ctgA	32328	32359	.	.	+	example	match	.	Name=seg01
+ctgA	32373	32937	.	.	+	example	match	.	Name=seg10
+ctgA	32594	32696	.	.	+	example	match	.	Name=seg02
+ctgA	32891	32901	.	.	+	example	match	.	Name=seg02
+ctgA	33052	33325	.	.	-	example	match	.	Name=seg05
+ctgA	33126	33388	.	.	+	example	match	.	Name=seg02
+ctgA	33324	35791	.	.	+	example	polypeptide_domain	.	Name=m04;Note=Ig-like
+ctgA	33437	33868	.	.	-	example	match	.	Name=seg05
+ctgA	33438	33443	.	.	+	example	match	.	Name=seg02
+ctgA	33758	34209	.	.	+	example	match	.	Name=seg02
+ctgA	34243	34313	.	.	-	example	match	.	Name=seg05
+ctgA	34400	34466	.	.	+	example	match	.	Name=seg02
+ctgA	34604	34983	.	.	-	example	match	.	Name=seg05
+ctgA	35332	35507	.	.	-	example	match	.	Name=seg05
+ctgA	35641	35904	.	.	-	example	match	.	Name=seg05
+ctgA	36033	38167	.	.	+	example	remark	.	Name=f09
+ctgA	36615	37057	.	.	-	example	match	.	Name=seg09
+ctgA	36648	40440	.	.	-	example	remark	.	Name=f03
+ctgA	37207	37227	.	.	-	example	match	.	Name=seg09
+ctgA	37241	38653	.	.	+	example	remark	.	Name=f04
+ctgA	37496	40559	.	.	-	example	polypeptide_domain	.	Name=m15;Note=7-transmembrane
+ctgA	39264	39361	.	.	-	example	match	.	Name=seg15
+ctgA	39752	40034	.	.	-	example	match	.	Name=seg15
+ctgA	40514	40954	.	.	-	example	match	.	Name=seg15
+ctgA	41136	41318	.	.	-	example	match	.	Name=seg14
+ctgA	41251	41365	.	.	-	example	match	.	Name=seg15
+ctgA	41491	41504	.	.	-	example	match	.	Name=seg15
+ctgA	41753	41948	.	.	-	example	match	.	Name=seg14
+ctgA	41940	42377	.	.	-	example	match	.	Name=seg15
+ctgA	42056	42474	.	.	-	example	match	.	Name=seg14
+ctgA	42747	42954	.	.	-	example	match	.	Name=seg15
+ctgA	42889	43270	.	.	-	example	match	.	Name=seg14
+ctgA	43394	43811	.	.	-	example	match	.	Name=seg14
+ctgA	43400	43897	.	.	-	example	match	.	Name=seg15
+ctgA	44042	44113	.	.	-	example	match	.	Name=seg15
+ctgA	44064	44556	.	.	-	example	match	.	Name=seg14
+ctgA	44190	44514	.	.	-	example	match	.	Name=seg07
+ctgA	44398	44888	.	.	-	example	match	.	Name=seg15
+ctgA	44551	45043	.	.	-	example	match	.	Name=seg07
+ctgA	44704	47713	.	.	-	example	remark	.	Name=f01
+ctgA	44762	45030	.	.	-	example	match	.	Name=seg14
+ctgA	45230	45488	.	.	-	example	match	.	Name=seg14
+ctgA	45280	45375	.	.	-	example	match	.	Name=seg15
+ctgA	45372	45600	.	.	-	example	match	.	Name=seg07
+ctgA	45710	46041	.	.	-	example	match	.	Name=seg15
+ctgA	45789	46022	.	.	-	example	match	.	Name=seg14
+ctgA	45896	46315	.	.	-	example	match	.	Name=seg07
+ctgA	46011	48851	.	.	+	example	polypeptide_domain	.	Name=m09;Note=kinase
+ctgA	46091	46318	.	.	-	example	match	.	Name=seg14
+ctgA	46424	46564	.	.	-	example	match	.	Name=seg15
+ctgA	46490	46890	.	.	-	example	match	.	Name=seg07
+ctgA	46737	47087	.	.	-	example	match	.	Name=seg15
+ctgA	46815	46992	.	.	-	example	match	.	Name=seg14
+ctgA	46989	48410	.	.	-	example	remark	.	Name=f11
+ctgA	47125	47297	.	.	-	example	match	.	Name=seg07
+ctgA	47328	47595	.	.	-	example	match	.	Name=seg15
+ctgA	47448	47829	.	.	-	example	match	.	Name=seg14
+ctgA	47734	47983	.	.	-	example	match	.	Name=seg07
+ctgA	47857	47979	.	.	-	example	match	.	Name=seg15
+ctgA	48168	48453	.	.	-	example	match	.	Name=seg15
+ctgA	48252	48366	.	.	+	example	polypeptide_domain	.	Name=m01;Note=WD40
+ctgA	48446	48709	.	.	-	example	match	.	Name=seg07
+ctgA	48930	49186	.	.	-	example	match	.	Name=seg07
+ctgA	49405	49476	.	.	+	example	match	.	Name=seg13
+ctgA	49471	49699	.	.	-	example	match	.	Name=seg07
+ctgA	49757	50000	.	.	-	example	remark	.	Name=f12
+ctgA	49761	50000	.	.	+	example	match	.	Name=seg13
+ctgA	49956	50000	.	.	-	example	match	.	Name=seg07
+ctgB	0	6079	.	.	.	example	contig	.	Name=ctgB
+ctgB	1658	1984	.	.	+	example	remark	.	Name=f07;Note=This is an example
+ctgB	3013	6130	.	.	+	example	remark	.	Name=f06;Note=This is another example
+ctgB	4714	5968	.	.	-	example	remark	.	Name=f05;Note=ああ、この機能は、世界中を旅しています！

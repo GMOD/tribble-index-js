@@ -27,7 +27,7 @@ class RecordCollector {
   }
 }
 describe('tribble file', () => {
-  it('can read ctgA:1000..4000', async () => {
+  it('can query volvox.test.vcf', async () => {
     const f = new TribbleIndexedFile({
       path: require.resolve('./data/volvox.test.vcf'),
       tribblePath: require.resolve('./data/volvox.test.vcf.idx'),
@@ -51,6 +51,9 @@ describe('tribble file', () => {
     expect(items.length).toEqual(0)
     items.clear()
     await f.getLines('ctgA', 2999, 3000, items.callback)
+    expect(items.length).toEqual(1)
+    items.clear()
+    await f.getLines('ctgA', 3000, 3000, items.callback)
     expect(items.length).toEqual(1)
     items.clear()
     await f.getLines('ctgA', 3000, 3001, items.callback)
@@ -102,41 +105,73 @@ describe('tribble file', () => {
     await expect(f.getLines()).rejects.toThrow(/reference/)
     await expect(f.getLines('foo', 23, 45)).rejects.toThrow(/callback/)
   })
+  it('can query volvox.test.bed', async () => {
+    const f = new TribbleIndexedFile({
+      path: require.resolve('./data/volvox.test.bed'),
+      tribblePath: require.resolve('./data/volvox.test.bed.idx'),
+      columnNumbers: { ref: 1, start: 2, end: 3 },
+      yieldLimit: 10,
+    })
+    const headerString = await f.getHeader()
+    expect(headerString).toEqual('')
+    const lines = new RecordCollector()
+    await f.getLines('ctgB', 0, Infinity, lines.callback)
+    lines.expectNoDuplicates()
+    expect(lines.length).toEqual(4)
+    expect(lines.records[3]).toEqual(
+      'ctgB	4714	5968	.	.	-	example	remark	.	Name=f05;Note=ああ、この機能は、世界中を旅しています！',
+    )
+    lines.clear()
+    await f.getLines('ctgA', 10000000, Infinity, lines.callback)
+    expect(lines.length).toEqual(0)
+    lines.clear()
+    await f.getLines('ctgA', 0, Infinity, lines.callback)
+    expect(lines.length).toEqual(237)
+    lines.clear()
+    await f.getLines('ctgB', 0, Infinity, lines.callback)
+    expect(lines.length).toEqual(4)
+    lines.clear()
+    await f.getLines('ctgB', 0, 4715, lines.callback)
+    expect(lines.length).toEqual(4)
+    lines.clear()
+    await f.getLines('ctgB', 0, 4714, lines.callback)
+    expect(lines.length).toEqual(3)
+    lines.clear()
+    await f.getLines('ctgB', 4714, 4714, lines.callback)
+    expect(lines.length).toEqual(0)
+    lines.clear()
+    await f.getLines('ctgB', 4713, 4714, lines.callback)
+    expect(lines.length).toEqual(2)
+    lines.clear()
+    await f.getLines('ctgB', 1984, 1985, lines.callback)
+    expect(lines.length).toEqual(1)
+    lines.clear()
+    await f.getLines('ctgB', 1983, 1984, lines.callback)
+    expect(lines.length).toEqual(2)
+    lines.clear()
+    lines.clear()
+    await f.getLines('ctgA', 50, 100, lines.callback)
+    expect(lines.length).toEqual(1)
+    lines.clear()
+  })
+  it('can fetch the entire header for a very large vcf header', async () => {
+    const f = new TribbleIndexedFile({
+      path: require.resolve('./data/large_vcf_header.vcf'),
+    })
+    const headerString = await f.getHeader()
+    const lastBitOfLastHeaderLine =
+      'CN_105715_AGL\tCDC_QG-1_AGL\tCDC_SB-1_AGL\n'
+    expect(
+      headerString.slice(
+        headerString.length - lastBitOfLastHeaderLine.length,
+        headerString.length,
+      ),
+    ).toEqual(lastBitOfLastHeaderLine)
+    expect(headerString[headerString.length - 1]).toEqual('\n')
+    expect(headerString.length).toEqual(5315655)
+  })
 })
 
-// it('can query volvox.sort.gff3.gz.1', async () => {
-//   const f = new TabixIndexedFile({
-//     path: require.resolve('./data/volvox.sort.gff3.gz.1'),
-//     tbiPath: require.resolve('./data/volvox.sort.gff3.gz.tbi'),
-//   })
-
-//   const headerString = await f.getHeader()
-//   expect(headerString[headerString.length - 1]).toEqual('\n')
-//   expect(headerString.length).toEqual(130)
-
-//   const lines = new RecordCollector()
-//   await f.getLines('ctgB', 0, Infinity, lines.callback)
-//   lines.expectNoDuplicates()
-//   expect(lines.length).toEqual(4)
-//   expect(lines.records[3].line).toEqual(
-//     'ctgB	example	remark	4715	5968	.	-	.	Name=f05;Note=ああ、この機能は、世界中を旅しています！',
-//   )
-//   lines.clear()
-//   await f.getLines('ctgA', 10000000, Infinity, lines.callback)
-//   expect(lines.length).toEqual(0)
-//   lines.clear()
-//   await f.getLines('ctgA', 0, Infinity, lines.callback)
-//   expect(lines.length).toEqual(237)
-//   lines.clear()
-//   await f.getLines('ctgB', 0, Infinity, lines.callback)
-//   expect(lines.length).toEqual(4)
-//   lines.clear()
-//   await f.getLines('ctgB', 0, 4715, lines.callback)
-//   expect(lines.length).toEqual(4)
-//   lines.clear()
-//   await f.getLines('ctgB', 1, 4714, lines.callback)
-//   expect(lines.length).toEqual(3)
-// })
 // it('can query gvcf.vcf.gz', async () => {
 //   const f = new TabixIndexedFile({
 //     path: require.resolve('./data/gvcf.vcf.gz'),
@@ -241,24 +276,6 @@ describe('tribble file', () => {
 //   lines.clear()
 //   await f.getLines('1', 1206810423, 1206810424, lines.callback)
 //   expect(lines.length).toEqual(0)
-// })
-
-// it('can fetch the entire header for a very large vcf header', async () => {
-//   const f = new TabixIndexedFile({
-//     path: require.resolve('./data/large_vcf_header.vcf.gz'),
-//   })
-
-//   const headerString = await f.getHeader()
-//   const lastBitOfLastHeaderLine =
-//     'CN_105715_AGL\tCDC_QG-1_AGL\tCDC_SB-1_AGL\n'
-//   expect(
-//     headerString.slice(
-//       headerString.length - lastBitOfLastHeaderLine.length,
-//       headerString.length,
-//     ),
-//   ).toEqual(lastBitOfLastHeaderLine)
-//   expect(headerString[headerString.length - 1]).toEqual('\n')
-//   expect(headerString.length).toEqual(5315655)
 // })
 
 // extended(
