@@ -77,9 +77,18 @@ class TribbleIndexedFile {
   }
 
   async getLines(ref, min, max, lineCallback) {
+    if (ref === undefined)
+      throw new TypeError('must provide a reference sequence name')
+    if (!(min <= max))
+      throw new TypeError(
+        'invalid start and end coordinates. must be provided, and start must be less than or equal to end',
+      )
+    if (!lineCallback) throw new TypeError('line callback must be provided')
+
     if (this.oneBasedClosed) max += 1
     const index = await this._loadIndex()
-    const originalRef = this.index.renamedRefToRef[ref]
+    let originalRef = this.index.renamedRefToRef[ref]
+    if (!originalRef) originalRef = ref
     const blocks = index.getBlocks(originalRef, min, max)
     if (!blocks) {
       throw new Error(`Error in index fetch (${[ref, min, max].join(',')})`)
@@ -170,7 +179,8 @@ class TribbleIndexedFile {
   }
 
   async getMetadata() {
-    return this.index.getMetadata()
+    const index = await this._loadIndex()
+    return index.getMetadata()
   }
 
   /**
@@ -210,30 +220,6 @@ class TribbleIndexedFile {
     return bytes.toString('utf8')
   }
 
-  // /**
-  //  * get an array of reference sequence names, in the order in which
-  //  * they occur in the file.
-  //  *
-  //  * reference sequence renaming is not applied to these names.
-  //  *
-  //  * @returns {Promise} for an array of string sequence names
-  //  */
-  // async getReferenceSequenceNames() {
-  //   const metadata = await this.getMetadata()
-  //   return metadata.refIdToName
-  // }
-
-  //   /**
-  //    * @param {object} metadata metadata object from the parsed index,
-  //    * containing columnNumbers, metaChar, and maxColumn
-  //    * @param {string} regionRefName
-  //    * @param {number} regionStart region start coordinate (0-based-half-open)
-  //    * @param {number} regionEnd region end coordinate (0-based-half-open)
-  //    * @param {array[string]} line
-  //    * @returns {object} like `{startCoordinate, overlaps}`. overlaps is boolean,
-  //    * true if line is a data line that overlaps the given region
-  //    */
-
   /**
    * return the approximate number of data lines in the given reference sequence
    * returns -1 if the reference sequence is not found
@@ -241,8 +227,9 @@ class TribbleIndexedFile {
    * @returns {Promise} for number of data lines present on that reference sequence
    */
   async lineCount(refSeq) {
-    const originalRef = this.index.renamedRefToRef[refSeq]
-    return this.index.lineCount(originalRef)
+    const index = await this._loadIndex()
+    const originalRef = index.renamedRefToRef[refSeq]
+    return index.lineCount(originalRef)
   }
 }
 
