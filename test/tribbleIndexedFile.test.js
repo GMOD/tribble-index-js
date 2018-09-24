@@ -126,6 +126,7 @@ describe('tribble file', () => {
     expect(lines.length).toEqual(0)
     lines.clear()
     await f.getLines('ctgA', 0, Infinity, lines.callback)
+    lines.expectNoDuplicates()
     expect(lines.length).toEqual(237)
     lines.clear()
     await f.getLines('ctgB', 0, Infinity, lines.callback)
