@@ -1,6 +1,7 @@
 import { readLongFromArray, parser } from './binaryUtils'
 
 const linearDefaultBinWidth = 8000
+/* istanbul ignore next */
 const linearChromIndex = parser()
   .string('name', { zeroTerminated: true })
   .uint32('binWidth', {
@@ -39,6 +40,7 @@ const treeParser = parser()
     length: 'numIntervals',
   })
 
+/* istanbul ignore next */
 const headerParser = parser()
   .string('magic', { length: 4 })
   .uint32('type')

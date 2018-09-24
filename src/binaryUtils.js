@@ -3,6 +3,7 @@ if (typeof window !== 'undefined' && !window.Buffer) window.Buffer = Buffer
 
 const { Parser } = require('binary-parser')
 
+/* istanbul ignore next */
 function formatLongLE(fieldName) {
   return b => {
     if (b[7] || b[6] & 224) {
