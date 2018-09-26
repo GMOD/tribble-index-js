@@ -114,6 +114,8 @@ describe('tribble file', () => {
     })
     const headerString = await f.getHeader()
     expect(headerString).toEqual('')
+    const refSeqNames = await f.getReferenceSequenceNames()
+    expect(refSeqNames).toEqual(['ctgA', 'ctgB'])
     const lines = new RecordCollector()
     await f.getLines('ctgB', 0, Infinity, lines.callback)
     lines.expectNoDuplicates()
@@ -170,6 +172,17 @@ describe('tribble file', () => {
     ).toEqual(lastBitOfLastHeaderLine)
     expect(headerString[headerString.length - 1]).toEqual('\n')
     expect(headerString.length).toEqual(5315655)
+  })
+  it("can't query an interval tree index (intervalTest.bed)", async () => {
+    const f = new TribbleIndexedFile({
+      path: require.resolve('./data/intervalTest.bed'),
+      columnNumbers: { ref: 1, start: 2, end: 3 },
+      yieldLimit: 10,
+    })
+    const lines = new RecordCollector()
+    await expect(
+      f.getLines('chr1', 0, Infinity, lines.callback),
+    ).rejects.toThrow(/not yet implemented for interval tree indexes/)
   })
 })
 

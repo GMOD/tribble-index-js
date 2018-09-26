@@ -1,0 +1,23 @@
+{
+  "magic": "TIDX",
+  "type": "interval_tree",
+  "version": 3,
+  "fileName": "file:///root/docker_java_test/igv-master/test/data/bed/intervalTest.bed",
+  "fileSize": 126,
+  "fileTimestamp": 1536645109000,
+  "fileMD5": "",
+  "flags": 0,
+  "numProperties": 0,
+  "properties": [],
+  "numChromosomes": 1,
+  "name": "chr1",
+  "numIntervals": 1,
+  "intervals": [
+    {
+      "start": 1677535,
+      "end": 1677588,
+      "pos": 0,
+      "size": 126
+    }
+  ]
+}

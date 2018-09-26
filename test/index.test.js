@@ -31,6 +31,9 @@ describe('index reader', () => {
       file: 'corruptedBaseVariants.vcf.idx',
       throws: true,
     },
+    {
+      file: 'intervalTest.bed.idx',
+    },
   ]
 
   testcases.forEach(({ file, throws }) => {
@@ -63,8 +66,7 @@ describe('index reader', () => {
     expect(index.hasRefSeq('20')).toEqual(true)
     expect(index.hasRefSeq(' 20')).toEqual(true)
   })
-
-  it(`can get blocks from phased.vcf.idx, which has whitespace in one of the chr names`, async () => {
+  it(`can get blocks from 1801160099-N32519_26611_S51_56704.hard-filtered.vcf.idx, which has whitespace in one of the chr names`, async () => {
     const file = '1801160099-N32519_26611_S51_56704.hard-filtered.vcf.idx'
     const fn = require.resolve(`./data/${file}`)
     const buf = await readFile(fn)
@@ -75,5 +77,17 @@ describe('index reader', () => {
     expect(index.hasRefSeq('12')).toEqual(true)
     expect(index.hasRefSeq('20')).toEqual(false)
     expect(index.hasRefSeq(' 20')).toEqual(false)
+  })
+  it(`throws errors for interval tree indexes`, async () => {
+    const file = 'intervalTest.bed.idx'
+    const fn = require.resolve(`./data/${file}`)
+    const buf = await readFile(fn)
+    const index = read(buf)
+    expect(() => {
+      index.getBlocks('chr1', 0, Infinity)
+    }).toThrow(/not yet implemented for interval tree indexes/)
+    expect(() => {
+      index.hasRefSeq('chr1')
+    }).toThrow(/not yet implemented for interval tree indexes/)
   })
 })

@@ -73,6 +73,9 @@ class TribbleIndexedFile {
       const bytes = await this.tribbleFilehandle.readFile()
       this.index = read(bytes)
     }
+    // This statement is here to make this fail if it's an interval tree index
+    // Will have to change this interface if support is added for those
+    this.index.hasRefSeq('nonexistent')
     this.index.renamedRefToRef = {}
     Object.keys(this.index.chromosomeEntries).forEach(ref => {
       this.index.renamedRefToRef[this.renameRefSeqCallback(ref)] = ref
