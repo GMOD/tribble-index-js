@@ -1,4 +1,4 @@
-import { readLongFromArray, parser } from './binaryUtils'
+const { readLongFromArray, parser } = require('./binaryUtils')
 
 const linearDefaultBinWidth = 8000
 /* istanbul ignore next */

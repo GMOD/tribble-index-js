@@ -18,30 +18,36 @@ import TribbleIndexedFile from '@gmod/tribble-index'
 // or without ES6
 const { TribbleIndexedFile } = require('@gmod/tribble-index')
 
-const indexedFile = new TribbleIndexedFile({ path: 'path/to/my/file.gz' })
-// by default, assumes tribble index at path/to/my/file.idx
+const indexedFile = new TribbleIndexedFile({ path: 'path/to/data.vcf' })
+// by default, assumes tribble index at path/to/data.vcf.idx
 // can also provide `tribblePath` if the tribble is named differently
 
-// iterate over lines in the specified region, each of which
-// is structured as
-const lines = []
-indexedFile.getLines('ctgA', 200, 300, line => lines.push(line))
-// lines is now an array of strings, which are data lines.
-// commented (meta) lines are skipped.
-// line strings do not include any trailing whitespace characters.
-// the callback is also called with a `fileOffset`,
-// which gives the virtual file offset where the line is found in the file
+async function doStuff() {
+  // iterate over lines in the specified region, each of which
+  // is structured as
+  const lines = []
+  await indexedFile.getLines('contigA', 3000, 3200, line => lines.push(line))
+  // lines is now an array of strings, which are data lines.
+  // commented (meta) lines are skipped.
+  // line strings do not include any trailing whitespace characters.
+  console.log(lines)
+  // ↳ [ 'contigA\t3000\trs17883296\tG\tT\t100\tPASS\tNS=3;DP=14;AF=0.5;DB;H2\tGT:AP\t0|0:0.000,0.000']
 
-// get the approximate number of data lines in the file for the
-// given reference sequence, excluding header, comment, and whitespace lines
-const numLines = indexedFile.lineCount('ctgA')
+  // get the approximate number of data lines in the file for the
+  // given reference sequence, excluding header, comment, and whitespace lines
+  console.log(await indexedFile.lineCount('contigA'))
+  // ↳ 109
 
-// get the "header text" string from the file, which is the first contiguous
-// set of lines in the file that all start with a "meta" character (usually #)
-const headerText = indexedFile.getHeader()
+  // get the "header text" string from the file, which is the first contiguous
+  // set of lines in the file that all start with a "meta" character (usually #)
+  console.log(await indexedFile.getHeader())
+  // ↳ ##fileformat=VCFv4.1
+  // ↳ #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	HG00096
 
-// or if you want a buffer instead, there is getHeaderBuffer()
-const headerBuffer = indexedFile.getHeaderBuffer()
+  // or if you want a buffer instead, there is getHeaderBuffer()
+  console.log(await indexedFile.getHeaderBuffer())
+  // ↳ <Buffer 23 23 66 69 6c 65 66 6f 72 6d 61 74 3d 56 43 46 76 34 2e 31 0a 23 23 66 69 6c 65 ... >
+}
 ```
 
 Also supports a lower-level interface
@@ -54,23 +60,25 @@ const fs = require('fs')
 const read = require('@gmod/tribble-index')
 
 fs.readFile('path/to/data.vcf.idx', (err, buffer) => {
+  if (err) throw err
   const index = read(buffer)
 
-  console.log(index.header)
-  const blocks = index.getBlocks('ctgA', 123000, 456000)
+  console.log(index)
+  const blocks = index.getBlocks('contigA', 3000, 3200)
 
   // can now use these blocks from the index to read the file
   // regions of interest
-  fs.open('path/to/data.vcf', 'r', (err, fd) => {
-    if (err) throw err
+  fs.open('path/to/data.vcf', 'r', (err2, fd) => {
+    if (err2) throw err2
     blocks.forEach(({ length, offset }) => {
-      const buffer = Buffer.alloc(length)
-      fs.read(fd, buffer, 0, length, offset, (err, buffer) => {
-        console.log('got file data', buffer)
+      const buffer2 = Buffer.alloc(length)
+      fs.read(fd, buffer2, 0, length, offset, (err3, bytesRead, buffer3) => {
+        if (err3) throw err3
+        console.log('got file data', buffer3)
       })
     })
-    fs.close(fd, err => {
-      if (err) throw err
+    fs.close(fd, err4 => {
+      if (err4) throw err4
     })
   })
 })

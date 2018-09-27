@@ -1,4 +1,4 @@
-import indexParser from './parsers'
+const indexParser = require('./parsers')
 
 class BaseIndex {
   constructor(parsed) {
