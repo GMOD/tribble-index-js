@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Read htsjdk Tribble indexes using pure JavaScript",
   "license": "MIT",
-  "repository": "GMOD/tribble-index",
+  "repository": "GMOD/tribble-index-js",
   "main": "dist/index.js",
   "author": {
     "name": "Robert Buels",
