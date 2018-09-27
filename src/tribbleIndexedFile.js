@@ -2,11 +2,11 @@ const LRU = require('lru-cache')
 const LocalFile = require('./localFile')
 const read = require('./tribble')
 
-// function timeout(time) {
-//   return new Promise(resolve => {
-//     setTimeout(resolve, time)
-//   })
-// }
+function timeout(time) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}
 
 class TribbleIndexedFile {
   /**
@@ -64,7 +64,7 @@ class TribbleIndexedFile {
     this.renameRefSeqCallback = renameRefSeqs
     this.blockCache = LRU({
       max: Math.floor(blockCacheSize / (1 << 16)),
-      length: n => n.length,
+      length: () => 1,
     })
   }
 
@@ -116,12 +116,25 @@ class TribbleIndexedFile {
       results.push(this._getLinesFromBlock(blocks[blockNum]))
     }
     const retrievedBlocks = await Promise.all(results)
-    retrievedBlocks.forEach(block => {
-      block.forEach(line => {
-        const lineCheck = this.checkLine(ref, min, max, line)
-        if (lineCheck.overlaps) lineCallback(line)
-      })
-    })
+    let linesSinceLastYield = 0
+    for (let block = 0; block < retrievedBlocks.length; block += 1) {
+      for (let line = 0; line < retrievedBlocks[block].length; line += 1) {
+        const lineCheck = this.checkLine(
+          ref,
+          min,
+          max,
+          retrievedBlocks[block][line],
+        )
+        if (lineCheck.overlaps) lineCallback(retrievedBlocks[block][line])
+        // yield if we have emitted beyond the yield limit
+        linesSinceLastYield += 1
+        if (linesSinceLastYield >= this.yieldLimit) {
+          // eslint-disable-next-line
+          await timeout(1)
+          linesSinceLastYield = 0
+        }
+      }
+    }
   }
 
   _getLinesFromBlock(block) {
