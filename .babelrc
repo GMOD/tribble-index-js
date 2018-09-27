@@ -1,15 +1,29 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "node": 6,
-        "browsers": [
-          "last 2 versions",
-          "safari >= 9",
-          "ie >= 10",
-        ]
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "safari >= 9"
+          ],
+          "node": "6.10"
+        }
       }
-    }],
-    "stage-2"
+    ]
+  ],
+  "retainLines": true,
+  "sourceMaps": true,
+  "plugins": [
+    [
+      "transform-runtime",
+      {
+        "helpers": true,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ]
   ]
 }
