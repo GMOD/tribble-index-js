@@ -1,7 +1,4 @@
-// slight hack to make binary-parser work under webpack in the browser
-if (typeof window !== 'undefined' && !window.Buffer) window.Buffer = Buffer
-
-const { Parser } = require('binary-parser')
+const { Parser } = require('@gmod/binary-parser')
 
 /* istanbul ignore next */
 function formatLongLE(fieldName) {
