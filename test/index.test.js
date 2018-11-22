@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { read } from '../src'
 
-const {promisify} = require('es6-promisify')
+const { promisify } = require('es6-promisify')
 
 const readFile = promisify(fs.readFile)
 
