@@ -1,4 +1,4 @@
-const promisify = require('util.promisify')
+const {promisify} = require('es6-promisify')
 
 // don't load fs native module if running in webpacked code
 // eslint-disable-next-line camelcase
