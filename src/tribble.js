@@ -152,7 +152,7 @@ function read(input) {
   if (Buffer.isBuffer(input)) {
     const data = indexParser.parse(input).result
     if (data.type === 1) return new LinearBinnedIndex(data)
-    else if (data.type === 2) return new IntervalTreeIndex(data)
+    if (data.type === 2) return new IntervalTreeIndex(data)
     throw new Error(`unsupported index type "${data.type}"`)
   }
 

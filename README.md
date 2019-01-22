@@ -4,6 +4,7 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/GMOD/tribble-index/master.svg?style=flat-square)](https://codecov.io/gh/GMOD/tribble-index/branch/master)
 [![NPM version](https://img.shields.io/npm/v/@gmod/tribble-index.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/@gmod/tribble-index)
 [![Build Status](https://img.shields.io/travis/rbuels/tribble-index/master.svg?logo=travis&style=flat-square)](https://travis-ci.org/rbuels/tribble-index)
+[![Greenkeeper badge](https://badges.greenkeeper.io/GMOD/tribble-index-js.svg)](https://greenkeeper.io/)
 
 Read htsjdk Tribble indexes (e.g. \*.vcf.idx files) using pure JavaScript. Supports only Tribble version 3 linear indexes right now.
 
@@ -124,9 +125,9 @@ false otherwise
 
 **Parameters**
 
--   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
 ### read
 
@@ -135,7 +136,7 @@ the entire index.
 
 **Parameters**
 
--   `input` **[Buffer](https://nodejs.org/api/buffer.html)** 
+-   `input` **[Buffer](https://nodejs.org/api/buffer.html)**
 
 Returns **(LinearIndex | IntervalTreeIndex)** an index object supporting the `getBlocks` method
 
@@ -143,11 +144,11 @@ Returns **(LinearIndex | IntervalTreeIndex)** an index object supporting the `ge
 
 **Parameters**
 
--   `args` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `args.path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
-    -   `args.filehandle` **filehandle?** 
-    -   `args.tribblePath` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
-    -   `args.tribbleFilehandle` **filehandle?** 
+-   `args` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+    -   `args.path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+    -   `args.filehandle` **filehandle?**
+    -   `args.tribblePath` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+    -   `args.tribbleFilehandle` **filehandle?**
     -   `args.metaChar` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** character that denotes the beginning of a header line (optional, default `'#'`)
     -   `args.columnNumbers` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** object like {ref start end} defining the (1-based) columns in
         the file. end may be set to -1 if not present. default {ref: 1, start: 2, end: -1} (optional, default `{ref:1,start:2,end:-1}`)
@@ -166,10 +167,10 @@ Returns **(LinearIndex | IntervalTreeIndex)** an index object supporting the `ge
 
 **Parameters**
 
--   `regionRefName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `regionRefName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 -   `regionStart` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** region start coordinate (0-based-half-open)
 -   `regionEnd` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** region end coordinate (0-based-half-open)
--   `line`  
+-   `line`
 
 Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** like `{startCoordinate, overlaps}`. overlaps is boolean,
 true if line is a data line that overlaps the given region
