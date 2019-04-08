@@ -92,22 +92,28 @@ fs.readFile('path/to/data.vcf.idx', (err, buffer) => {
 #### Table of Contents
 
 -   [getBlocks](#getblocks)
+    -   [Parameters](#parameters)
 -   [getMetadata](#getmetadata)
 -   [hasRefSeq](#hasrefseq)
+    -   [Parameters](#parameters-1)
 -   [read](#read)
+    -   [Parameters](#parameters-2)
 -   [constructor](#constructor)
+    -   [Parameters](#parameters-3)
 -   [checkLine](#checkline)
+    -   [Parameters](#parameters-4)
 -   [getReferenceSequenceNames](#getreferencesequencenames)
 -   [getHeaderBuffer](#getheaderbuffer)
 -   [getHeader](#getheader)
 -   [lineCount](#linecount)
+    -   [Parameters](#parameters-5)
 
 ### getBlocks
 
 Get an array of { offset, length } objects describing regions of the
 indexed file containing data for the given range.
 
-**Parameters**
+#### Parameters
 
 -   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** name of the reference sequence
 -   `start` **integer** start coordinate of the range of interest
@@ -123,32 +129,32 @@ firstDataOffset flags magic properties type version chromosomes}
 Return true if the given reference sequence is present in the index,
 false otherwise
 
-**Parameters**
+#### Parameters
 
--   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `refName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
 
 ### read
 
 Parse the index from the given Buffer object. The buffer must contain
 the entire index.
 
-**Parameters**
+#### Parameters
 
--   `input` **[Buffer](https://nodejs.org/api/buffer.html)**
+-   `input` **[Buffer](https://nodejs.org/api/buffer.html)** 
 
 Returns **(LinearIndex | IntervalTreeIndex)** an index object supporting the `getBlocks` method
 
 ### constructor
 
-**Parameters**
+#### Parameters
 
--   `args` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
-    -   `args.path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
-    -   `args.filehandle` **filehandle?**
-    -   `args.tribblePath` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?**
-    -   `args.tribbleFilehandle` **filehandle?**
+-   `args` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `args.path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+    -   `args.filehandle` **filehandle?** 
+    -   `args.tribblePath` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+    -   `args.tribbleFilehandle` **filehandle?** 
     -   `args.metaChar` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** character that denotes the beginning of a header line (optional, default `'#'`)
     -   `args.columnNumbers` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** object like {ref start end} defining the (1-based) columns in
         the file. end may be set to -1 if not present. default {ref: 1, start: 2, end: -1} (optional, default `{ref:1,start:2,end:-1}`)
@@ -165,12 +171,12 @@ Returns **(LinearIndex | IntervalTreeIndex)** an index object supporting the `ge
 
 ### checkLine
 
-**Parameters**
+#### Parameters
 
--   `regionRefName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `regionRefName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `regionStart` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** region start coordinate (0-based-half-open)
 -   `regionEnd` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** region end coordinate (0-based-half-open)
--   `line`
+-   `line`  
 
 Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** like `{startCoordinate, overlaps}`. overlaps is boolean,
 true if line is a data line that overlaps the given region
@@ -203,7 +209,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 return the approximate number of data lines in the given reference sequence
 returns -1 if the reference sequence is not found
 
-**Parameters**
+#### Parameters
 
 -   `refSeq` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** reference sequence name
 
