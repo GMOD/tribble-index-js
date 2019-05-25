@@ -1,6 +1,6 @@
 {
   "name": "@gmod/tribble-index",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Read htsjdk Tribble indexes using pure JavaScript",
   "license": "MIT",
   "repository": "GMOD/tribble-index-js",
