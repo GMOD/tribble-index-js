@@ -10,7 +10,7 @@ Read htsjdk Tribble indexes (e.g. \*.vcf.idx files) using pure JavaScript. Suppo
 
 ## Install
 
-    $ npm install --save tribble-index
+    $ npm install --save @gmod/tribble-index
 
 ## Usage
 
